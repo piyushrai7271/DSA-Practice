@@ -1031,3 +1031,47 @@
 
 // console.log(arr);
 
+// NEW DAY .................................................
+
+// 14. Find missing numbers from 1 to n.
+//Input: [1,2,4,6] → Missing: [3,5]
+
+// let arr = [1,2,4,7];
+// let missElement = [];
+
+// for(let i=0; i<arr.length; i++){
+   
+//     let prevElement = arr[i-1];
+//     let currElement = arr[i];
+//     let differ = currElement - prevElement;
+
+//     if(differ > 1){
+//         for(let num = prevElement + 1; num < currElement; num++){
+//             missElement[missElement.length] = num;
+//         }
+//     }
+// }
+
+// console.log(missElement);
+
+// Move all the zeros to the end  without using extra array
+// input [1,0,3,0,5] -> [1,3,5,0,0]
+
+// let arr = [1,0,3,0,5];
+// let zeroIndex = 0;
+
+
+// for(let i=0; i<arr.length; i++){
+
+//     if(arr[i] !== 0){
+//         let temp = arr[zeroIndex];
+//         arr[zeroIndex] = arr[i];
+//         arr[i] = temp;
+//         zeroIndex++
+//     }
+    
+// }
+// console.log(arr)
+
+
+
