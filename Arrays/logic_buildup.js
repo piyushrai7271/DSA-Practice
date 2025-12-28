@@ -1073,5 +1073,182 @@
 // }
 // console.log(arr)
 
+// NEW DAY....................
+
+// let str = "hellow"
+// let newWord = "";
+
+// for(let i=0; i< str.length; i++){
+//     newWord = str[i] + newWord;
+// }
+
+// console.log(newWord);
+
+//Reverse words in an array of strings.
+// input "hellow world" -> "wolleh dlrow"
+
+// let str = "hellow computer world";
+// let result = "";
+// let word = "";
+
+// for(let i=0; i<=str.length ; i++){
+
+//     if(str[i] !== " " && i !== str.length){
+//         word = str[i] + word;
+//     } else {
+//         result += word;
+//         if(i !== str.length){
+//             result = result + " ";
+//         }
+//         word = "";
+//     }
+// }
+
+// console.log(result);
+
+// New day .......
+// find all pairs in an array whose sum is equal to a given number
+
+// let arr = [4,4,5,5];
+// let target = 9;
+// let pairedArray = [];
+
+// for(let i=0; i<arr.length; i++){
+
+//     for(let j=i+1; j<arr.length; j++){
+//         if(arr[i] + arr[j] === target){
+//             pairedArray[pairedArray.length] = [arr[i],arr[j]];
+//         }
+//     }
+// }
+// console.log(pairedArray)
+
+// find the differance between the largest and smallest element in array
+// let arr = [10,5,30,20];
+// let largestElement = -Infinity;
+// let smallestElement = +Infinity;
+
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i] < smallestElement){
+//         smallestElement = arr[i];
+//     } else if(arr[i]> largestElement){
+//         largestElement = arr[i];
+//     }
+// }
+// let differ = largestElement - smallestElement;
+// console.log("Differance between largest and smallest element :",differ);
+
+// 🔹 4. Return a new array with only unique elements (order must stay same).
+
+// let arr = [2,2,3,4,5,6,7,4,7,9,10,5];
+// let uniqueElem = [];
+
+// for (let i = 0; i < arr.length; i++) {
+
+//     let isthere = false;   // ✅ reset for each element
+
+//     for (let j = 0; j < uniqueElem.length; j++) {
+//         if (arr[i] === uniqueElem[j]) {
+//             isthere = true;
+//             break;         // optimization
+//         }
+//     }
+
+//     if (!isthere) {
+//         uniqueElem[uniqueElem.length] = arr[i];
+//     }
+// }
+
+// console.log(uniqueElem);
 
 
+// // Convert a nested array into a single flat array. Example: [[1,2],[3,4],[5]] → [1,2,3,4,5].
+
+// let arr = [[1,2],3,[4,5],6];
+// let flatArray = [];
+// for(let i=0; i<arr.length; i++){
+
+//     let value = arr[i];
+//     if(Array.isArray(value)){
+//         for(let j=0; j<value.length; j++){
+//             flatArray[flatArray.length]=value[j];
+//         }
+//     }else{flatArray[flatArray.length]=value;}
+    
+// }
+// console.log(flatArray);
+
+// Convert a nested array into a single flat array. Example: [[1,2],[3,4],[5]] → [1,2,3,4,5].
+
+// let arr = [1,2,[3,[4,5,[6,7,8,[9]]]],10];
+// let flatArray = [];
+
+// function flatArrays (arr){
+//   for(let i=0; i<arr.length; i++){
+//     let value = arr[i];
+//      if(Array.isArray(value)){
+//         flatArrays(value);
+//      } else{
+//        flatArray[flatArray.length] = value;
+//      }
+//   }
+// }
+// flatArrays(arr);
+// console.log(flatArray);
+
+//🔹 5. Check if two arrays are equal element-by-element (without .every()).
+
+// let arr = [2,4,6,8,10];
+// let brr = [2,4,6,8,10];
+// let isequal = true;
+
+// if(arr.length !== brr.length){
+//     isequal = false;
+// }else{
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i] !== brr[i]){
+//             isequal = false;
+//         }
+//     }
+// }
+// if(isequal){
+//     console.log("Both array are equal");
+// }else{
+//     console.log("Both array are not equal")
+// }
+
+// 🔹 7. Move all zeros to the end without using extra array.
+//Example: [1,0,3,0,5] → [1,3,5,0,0]
+
+// let arr = [1,0,3,0,5];
+// let nonZeroIndex = 0;
+
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i] !== 0){
+//         let temp = arr[nonZeroIndex];
+//         arr[nonZeroIndex] = arr[i];
+//         arr[i] = temp;
+//         nonZeroIndex++;
+//     }
+// }
+// console.log(arr);
+
+// 🔹 9. Find the frequency of each number but show only duplicates.
+// Example → “4 appears 3 times”, etc.
+
+// let arr = [1,2,3,4,2,3,4,2,3,4,2,3,4,5,5,,0];
+// let myObject = {};
+
+// for(let i=0; i<arr.length; i++){
+//     let value = arr[i];
+
+//     if(myObject[value]){
+//         myObject[value]++;
+//     }else{
+//         myObject[value] = 1;
+//     }
+// }
+
+// for (const key in myObject) {
+//     console.log(`${key} appears ${myObject[key]} times`);
+// }
