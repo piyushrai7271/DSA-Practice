@@ -1252,3 +1252,173 @@
 // for (const key in myObject) {
 //     console.log(`${key} appears ${myObject[key]} times`);
 // }
+
+// 🔹 8. Count how many numbers are prime in an array.
+
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+
+// prime number start from 2 and it is smalles prime number 
+// prime number is a number divisible by 1 or it self only
+
+// let arr = [1,2];
+// let primeCount = 0;
+
+// for(let i=0; i<arr.length; i++){
+
+//     let num = arr[i];
+//     let isPrime = true
+//     if(num <= 1){
+//         isPrime = false;
+//     } else {
+//         for(let j=2; j<num; j++){
+//             if(num % j === 0){
+//                 isPrime = false;
+//                 break;
+//             }
+//         }
+//     }
+//     if(isPrime){
+//         primeCount++;
+//     }
+    
+// }
+// console.log(primeCount);
+
+// New day.........................................................
+
+// Segregate numbers into odd array and even array separately.
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// let oddArray = [];
+// let evenArray = [];
+
+// for(let i=0; i<arr.length; i++){
+    
+//     let value = arr[i];
+//     if(value % 2 === 0){
+//         evenArray[evenArray.length] = value;
+//     }else{
+//         oddArray[oddArray.length]= value ;
+//     }
+// }
+// console.log("Odd listed element :",oddArray);
+// console.log("Even listed element :",evenArray);
+
+
+// 🔹 8. Count how many numbers are prime in an array.
+
+// let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+
+// let primeCount= 0;
+
+
+// for(let i=0; i<arr.length; i++){
+//    let isPrime = true;
+//    let num = arr[i];
+//    if(num <= 1){
+//     isPrime = false;
+//    }
+
+//    for(let j = 2; j<num ; j++){
+//      if(num % j === 0){
+//         isPrime = false;
+//         break;
+//      }
+//    }
+//    if(isPrime){
+//     primeCount++
+//    }
+// }
+// console.log("Total number of prime number in list is :",primeCount);
+
+// 🔹 10. Find the element that appears the maximum number of times.
+
+// let arr = [1,2,3,4,1,2,5,6,7,1,7,6,1,4,4,1,9,10];
+// let myObject = {};
+
+// for(let i=0; i<arr.length; i++){
+//     let value = arr[i];
+//     if(myObject[value]){
+//         myObject[value]++;
+//     }else{
+//         myObject[value]=1;
+//     }
+// }
+
+// let result = null;
+// let num  = null;
+// for (const key in myObject) {
+//     if(myObject[key] > result){
+//         result = myObject[key];
+//         num = key;
+//     }
+// }
+// console.log("Max appearence of a number is :",result + " " + "And number is :",num );
+
+// 🔹 11. Print all elements that occur only once (unique elements).
+// let arr = [1,2,3,4,5,6,1,2,3,5,6,1,2,3,5,6,7,8,9,10];
+// let myObject = {};
+// let uniqueElements = [];
+
+// for(let i = 0; i<arr.length; i++){
+
+//     let value = arr[i];
+//     if(myObject[value]){
+//         myObject[value]++;
+//     }else {
+//         myObject[value] = 1;
+//     }
+// }
+
+// for (let i = 0; i < arr.length; i++) {
+//     if (myObject[arr[i]] === 1) {
+//         uniqueElements[uniqueElements.length] = arr[i];
+//     }
+// }
+// console.log(uniqueElements);
+
+// let arr = [1,2,3,4,5,6,1,2,3,5,6,1,2,3,5,6,7,8,9,10];
+
+// let values = [];
+// let counts = [];
+
+// for (let i = 0; i < arr.length; i++) {
+//     let found = false;
+
+//     for (let j = 0; j < values.length; j++) {
+//         if (arr[i] === values[j]) {
+//             counts[j]++;
+//             found = true;
+//             break;
+//         }
+//     }
+
+//     if (!found) {
+//         values[values.length] = arr[i];
+//         counts[counts.length] = 1;
+//     }
+// }
+
+// console.log(values); // [1, 2, 3]
+
+// Reverse words in an array of strings.
+
+// let arr = "hellow world";
+// let brr = "";
+// let word = "";
+
+// for (let i = 0; i < arr.length; i++) {
+
+//     if (arr[i] !== " ") {
+//         word = arr[i] + word;
+//     } else {
+//         brr += word + " ";
+//         word = "";
+//     }
+// }
+
+// // add last word
+// brr += word;
+
+// console.log(brr);
