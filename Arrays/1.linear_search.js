@@ -108,25 +108,134 @@
 // }
 // console.log(isSorted(arr));
 
-// Find the first repeating element in an array
-let arr = [1, 2, 3, 4, 2, 1, 3];
+// Find the first repeating element in an array {Not solved my me}
+// let arr = [1, 2, 3, 4, 2, 1, 3];
 
-let minSecondIndex = arr.length;
-let result = -1;
+// let minSecondIndex = arr.length;
+// let result = -1;
 
-for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-        if (arr[i] === arr[j]) {
-            if (j < minSecondIndex) {
-                minSecondIndex = j;
-                result = arr[i];
-            }
-            break; // stop after second occurrence
-        }
-    }
-}
+// for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//         if (arr[i] === arr[j]) {
+//             if (j < minSecondIndex) {
+//                 minSecondIndex = j;
+//                 result = arr[i];
+//             }
+//             break; // stop after second occurrence
+//         }
+//     }
+// }
 
-console.log(result);
+// console.log(result);
+
+// Find the longest consecutive increasing subarray (continuous) {not solved my me}
+// Input:  [1, 2, 3, 2, 3, 4, 5, 1]
+
+// let arr = [1, 2, 3, 2, 3, 4, 5, 1];
+
+// let count = 1;
+// let currentCount = 1;
+
+// for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] - arr[i - 1] === 1) {
+//         currentCount++;
+//     } else {
+//         if (currentCount > count) {
+//             count = currentCount;
+//         }
+//         currentCount = 1;
+//     }
+// }
+
+// // final check for last streak
+// if (currentCount > count) {
+//     count = currentCount;
+// }
+
+// console.log(count);
+
+// New day...............
+//Find the equilibrium index in an array {i was not able to solve it}
+
+//An index is called an equilibrium index if
+//sum of elements to the left = sum of elements to the right
+//Return the first equilibrium index.
+//If none exists, return -1.
+
+// let arr = [4,5,1,1,1,1];
+
+// const findEquilibrimIndex = function(arr) {
+//     let preIndexSum = 0;
+//     let afterIndexSum = 0;
+//     let result = -1;
+
+//     for(let i=0; i<arr.length; i++){
+//         if(i>0){
+//              preIndexSum += arr[i-1];
+//         }
+//         for(let j= i+1; j<arr.length; j++){
+            
+//             afterIndexSum += arr[j];
+//         }
+//         if(preIndexSum === afterIndexSum){
+//             result = i;
+//         }else{
+//             afterIndexSum = 0;
+//         }
+//     }
+//     return result;
+
+// }
+// let Index = findEquilibrimIndex(arr);
+// console.log(Index);
+
+// CORRECT SOLUTION
+// const findEquilibrimIndex = function(arr) {
+//     let preIndexSum = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let afterIndexSum = 0;
+
+//         for (let j = i + 1; j < arr.length; j++) {
+//             afterIndexSum += arr[j];
+//         }
+
+//         if (preIndexSum === afterIndexSum) {
+//             return i; // first equilibrium index
+//         }
+
+//         preIndexSum += arr[i];
+//     }
+//     return -1;
+// };
+
+// Find the smallest subarray with sum ≥ target{not done by myself}
+// let arr = [2, 3, 1, 2, 4, 3];
+// let target = 7;
+
+// function minSubArrayLength(arr, target) {
+//     let minLength = arr.length + 1;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let sum = 0;
+
+//         for (let j = i; j < arr.length; j++) {
+//             sum += arr[j];
+
+//             if (sum >= target) {
+//                 let currentLength = j - i + 1;
+//                 if (currentLength < minLength) {
+//                     minLength = currentLength;
+//                 }
+//                 break; // no need to extend further
+//             }
+//         }
+//     }
+
+//     return minLength === arr.length + 1 ? 0 : minLength;
+// }
+
+// console.log(minSubArrayLength(arr, target));
 
 
 
