@@ -5,7 +5,7 @@
 // let arr =  [5, 3, 8, 4, 2];
 
 // const bubbleSort = function (arr){
-   
+
 //     for(let i=0; i<arr.length-1; i++){
 
 //         for(let j=0; j<arr.length-1-i; j++){
@@ -44,25 +44,20 @@
 //     console.log("Array is not sorted !!");
 // }
 
-
-
 //Sort array with insertion sort
 // let arr = [9,5,0,5,8,2,7,1];
 
 // function insertionSort (arr){
 
-
 // }
 
 // insertionSort(arr);
-
 
 // Sort array with selection sort
 // let arr = [9,5,0,5,8,2,7,1];
 
 // function selectionSort (arr) {
 
-    
 // }
 
 // selectionSort(arr);
@@ -83,7 +78,6 @@
 //         }
 //     }
 // }
-
 
 // inserElement(arr,elem);
 // console.log("Array length after insertion",arr.length);
@@ -110,15 +104,13 @@
 
 // console.log(insertElement(arr, elem));
 
-
-
 // sort a array using bubble sort
 // let arr = [8,4,1,0,9,7,6];
 
 // function bubbleSort (arr) {
 
 //     for(let i=0; i<arr.length-1 ; i++){
-         
+
 //         for(let j=0; j<arr.length-1-i; j++){
 //             if(arr[j] > arr[j+1]){
 //              let temp = arr[j+1];
@@ -150,9 +142,9 @@
 // }
 // console.log(arr)
 
-// insertion sort 
+// insertion sort
 
-// insert in sorted array 
+// insert in sorted array
 
 // let arr = [1,2,3,4,6,7,8,9,10];
 // let elem = 0;
@@ -192,7 +184,7 @@
 // let arr = [9,2,8,5,3,0,1,4];
 
 // function bubbleSort (arr) {
-    
+
 //     for(let i=0; i<arr.length-1; i++){
 
 //         for(let j=0; j<arr.length-1-i; j++){
@@ -263,9 +255,8 @@
 // Check if array is already sorted
 // let arr = [2,3,4,8,10]
 
-
 // function isSorted (arr){
-  
+
 //     let isSorted = true;
 
 //     for(let i=0; i<arr.length; i++){
@@ -377,3 +368,135 @@
 // const {secondLargest,secondSmallest} = secondLargestAndSmallest(arr);
 // console.log("Second Smallest number is :",secondSmallest);
 // console.log("Second largest number is :",secondLargest);
+
+// NEW DAY......................
+// let arr = [0,1,1,1,0,0,1,0,1,0,1,0]
+
+// function reArrange (arr) {
+
+//     for(let i=0; i<arr.length-1; i++){
+
+//         for(let j=0; j<arr.length-1-i; j++){
+//             if(arr[j]>arr[j+1]){
+//                 let temp = arr[j+1];
+//                 arr[j+1]=arr[j];
+//                 arr[j]=temp;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+
+// console.log(reArrange(arr));
+
+// previous question with updated version
+// let arr = [0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0];
+
+// let i = 0;
+// let j = arr.length - 1;
+
+// while (i < j) {
+//   if (arr[i] === 1 && arr[j] === 0) {
+//     let temp = arr[j];
+//     arr[j] = arr[i];
+//     arr[i] = temp;
+//        i++;j--
+//   } else if (arr[i] === 0){
+//       i++;
+//   } else if(arr[j] === 1){
+//     j--;
+//   }
+// }
+
+// console.log(arr);
+
+// Sort array of 0s, 1s, 2s (Dutch flag – logic based)
+
+// let arr = [1,1,0,2,0,2,1,0,0,1,2,2,0];
+
+// let low = 0;
+// let mid = 0;
+// let high = arr.length-1;
+
+// while(mid <= high){
+
+//     if(arr[mid]=== 0){
+//         let temp = arr[low];
+//         arr[low] = arr[mid];
+//         arr[mid] = temp;
+
+//         low++;
+//         mid++;
+//     }else if(arr[mid] === 1){
+//         mid++;
+//     }else if(arr[mid] === 2){
+//         let temp = arr[mid];
+//         arr[mid] = arr[high];
+//         arr[high] = temp;
+
+//         high--;
+//     }
+// }
+// console.log(arr);
+
+// Merge two sorted arrays into one sorted array
+
+// let arr = [1,3,5,7,9];
+// let brr = [2,4,6,8,10];
+// let crr = [];
+
+
+
+// for(let i=0,j=0; i<arr.length && j<brr.length;){
+//      if(arr[i]<brr[j]){
+//         crr[crr.length] = arr[i];
+//         i++
+//      } else if (brr[j]<arr[i]){
+//         crr[crr.length] = brr[j];
+//         j++
+//      }else if (i=== arr.length && j < brr.length){
+//         crr[crr.length]= brr[j];
+//         j++;
+//      }else if(j=== brr.length && i < arr.length){
+//         crr[crr.length] = arr[i];
+//         i++
+//      }
+//      else if(arr[i] === brr[j]){
+//         crr[crr.length] = arr[i];
+//         i++;
+//         j++
+//      }
+// }
+// console.log(crr);
+
+//Merge two sorted arrays into one sorted array
+// let arr = [1,3,5,7,9];
+// let brr = [2,4,6,8,10];
+// let crr = [];
+
+// let i=0;
+// let j=0;
+
+// while (i<arr.length && j<brr.length){
+//     if(arr[i]<brr[j]){
+//         crr[crr.length] = arr[i];
+//         i++;
+//     }else if(brr[j]<arr[i]){
+//         crr[crr.length] = brr[j];
+//         j++;
+//     }else if(arr[i] === brr[j]){
+//         crr[crr.length] = arr[i];
+//         i++;
+//         j++;
+//     }
+//     else if(i === arr.length-1 && j < arr.length-1 ){
+//         crr[crr.length] = brr[j];
+//         j++
+//     }else {
+//         crr[crr.length] = arr[i];
+//         i++;
+//     }
+// }
+// console.log(crr);
+
+
