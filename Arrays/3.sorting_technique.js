@@ -499,4 +499,88 @@
 // }
 // console.log(crr);
 
+// merge two sorted array in single array 
+// let odd = [1,3,5,7,9];
+// let even = [2,4,6,8,10];
+// let combineNumber = [];
+
+// let i=0;
+// let j=0;
+
+// while( i < odd.length && j < even.length){
+//     if(odd[i] < even[j]){
+//         combineNumber.push(odd[i]);
+//         i++;
+//     }else{
+//         combineNumber.push(even[j]);
+//         j++
+//     }
+// }
+
+// while (i < odd.length){
+//     combineNumber.push(odd[i]);
+//     i++;
+// }
+
+// while(j < even.length){
+//     combineNumber.push(even[j]);
+//     j++;
+// }
+
+// console.log(combineNumber);
+
+// Remove duplicates from a sorted array
+
+// let arr = [1,2,3,4,5,5,6,6,6,8,9,9,10,10];
+// let myObject = {};
+
+// for(let i=0; i<arr.length; i++){
+    
+//     let value = arr[i];
+//     if(myObject[value]){
+//         myObject[value]++;
+//     }else {
+//         myObject[value] = 1;
+//     }
+// }
+// let uniqueArray = [];
+// for (const key in myObject) {
+//     uniqueArray.push(key);
+// }
+// console.log(uniqueArray);
+// Remove duplicates from a sorted array
+
+// let arr = [1,2,3,4,5,5,6,6,6,8,9,9,10,10];
+// let duplicates = [];
+// let duplicateElement = null;
+// let i=0;
+// let j=i+1;
+
+// while(j<arr.length-1){
+//     if(arr[i] !== arr[j]){
+//         i++;
+//         j++;
+//     }else if(arr[i] === arr[j]){
+//         duplicateElement = arr[j];
+//         arr[j] = arr[j+1];
+//         j++
+//     }
+// }
+// console.log(arr);
+
+let arr = [1,2,3,4,5,5,6,6,6,8,9,9,10];
+
+let slow = 0;
+
+for (let fast = 1; fast < arr.length; fast++) {
+  if (arr[fast] !== arr[slow]) {
+    slow++;
+    arr[slow] = arr[fast];
+  }
+}
+
+// unique elements are from index 0 to slow
+console.log(arr.slice(0, slow + 1));
+console.log("New length:", slow + 1);
+
 
