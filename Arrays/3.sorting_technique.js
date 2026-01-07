@@ -568,19 +568,36 @@
 // }
 // console.log(arr);
 
-let arr = [1,2,3,4,5,5,6,6,6,8,9,9,10];
+// Remove duplicate element from sorted array 
+// let arr = [1,2,3,4,5,5,6,6,6,8,9,9,10];
 
-let slow = 0;
+// let slow = 0;
 
-for (let fast = 1; fast < arr.length; fast++) {
-  if (arr[fast] !== arr[slow]) {
-    slow++;
-    arr[slow] = arr[fast];
-  }
-}
+// for (let fast = 1; fast < arr.length; fast++) {
+//   if (arr[fast] !== arr[slow]) {
+//     slow++;
+//     arr[slow] = arr[fast];
+//   }
+// }
 
-// unique elements are from index 0 to slow
-console.log(arr.slice(0, slow + 1));
-console.log("New length:", slow + 1);
+// // unique elements are from index 0 to slow
+// console.log(arr.slice(0, slow + 1));
+// console.log("New length:", slow + 1);
 
+// sort array using bubble sort
+// let arr = [9,3,5,10,2,4,0]
 
+// for(let i=0; i<arr.length-1; i++){
+    
+//    for(let j = 0; j<arr.length-1-i; j++){
+//      if(arr[j] > arr[j+1]){
+//       let temp = arr[j+1];
+//       arr[j+1] = arr[j];
+//       arr[j] = temp
+//      }
+//    }
+// }
+// console.log(arr);
+
+// sort the array using insertion sort
+let arr = [9,3,5,10,2,4,0]
