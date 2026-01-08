@@ -600,4 +600,36 @@
 // console.log(arr);
 
 // sort the array using insertion sort
-let arr = [9,3,5,10,2,4,0]
+// let arr = [9,3,5,10,2,4,0]
+
+// for(let i=1; i<arr.length; i++){
+
+//     let j=i-1;
+//     let x = arr[i];
+//     while(j>-1 && arr[j]>x){
+//         arr[j+1] = arr[j];
+//         j--
+//     }
+//     arr[j+1] = x;
+// }
+// console.log(arr);
+
+//You are given an array where the first k elements are already sorted.
+//Using the idea of insertion sort, 
+//place the remaining elements in the correct position so that the whole array becomes sorted.
+
+// let arr = [1, 3, 5, 7, 2, 4],k = 4   // first 4 elements are sorted
+
+
+// for(let i=k; i<arr.length; i++){
+
+//     let j=i-1;
+//     let x= arr[i];
+//     while(j>-1 && arr[j]>x){
+//         arr[j+1]=arr[j];
+//         j--;
+//     }
+//     arr[j+1]=x;
+// }
+// console.log("Sorted array is :",arr);
+
