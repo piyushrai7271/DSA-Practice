@@ -78,10 +78,3 @@
 //          j++;
 //     }
 // }
-
-// Remove duplicate element from array without using extra array,object, and don't sort the array
-
-// let arr=[1,9,7,1,5,4,7,9];
-
-// let length = arr.length;
-
