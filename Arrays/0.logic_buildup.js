@@ -1422,3 +1422,33 @@
 // brr += word;
 
 // console.log(brr);
+
+//sort an Array using bubble sort
+// let arr = [8,3,5,1,0,2,10,1];
+
+// for(let i=0; i<arr.length-1; i++){
+
+//     for(let j=0; j<arr.length-1-i; j++){
+//         if(arr[j]>arr[j+1]){
+//             let temp=arr[j+1];
+//             arr[j+1] = arr[j];
+//             arr[j] = temp;
+//         }
+//     }
+// }
+// console.log(arr);
+// Sort An Array using insertion sort
+// let arr = [8,3,5,1,0,2,10,4];
+
+// for(let i=1; i<arr.length; i++){
+
+//     let j=i-1;
+//     let x= arr[i];
+//     while(arr[j]>x){
+//         arr[j+1] = arr[j];
+//         j--;
+//     }
+//     arr[j+1] = x;
+// }
+// console.log(arr);
+
