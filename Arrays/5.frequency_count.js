@@ -382,4 +382,7 @@
 //     console.log("There is no majority element");
 // }
 
+// Count frequency of words in a sentence
+let str = "i will complete data Structure and algo basic soon";
+let myObject = {};
 
