@@ -102,32 +102,145 @@
 
 //Using prefix sum, find the sum of elements from index L to R, but only at even indices.
 
-let arr = [5, 3, 8, 2, 7, 4, 6];
-let L = 1, R = 5;
+// let arr = [5, 3, 8, 2, 7, 4, 6];
+// let L = 1, R = 5;
 
-let prefix = [];
+// let prefix = [];
 
-// build prefix sum for EVEN indices only
-prefix[0] = 0;           // index 0 is even
-prefix[0] = arr[0];
+// // build prefix sum for EVEN indices only
+// prefix[0] = 0;           // index 0 is even
+// prefix[0] = arr[0];
 
-for (let i = 1; i < arr.length; i++) {
-  if (i % 2 === 0) {
-    prefix[i] = prefix[i - 1] + arr[i];
-  } else {
-    prefix[i] = prefix[i - 1];
-  }
-}
+// for (let i = 1; i < arr.length; i++) {
+//   if (i % 2 === 0) {
+//     prefix[i] = prefix[i - 1] + arr[i];
+//   } else {
+//     prefix[i] = prefix[i - 1];
+//   }
+// }
 
-// range sum
-function evenIndexRangeSum(l, r) {
-  if (l === 0) {
-    return prefix[r];
-  } else {
-    return prefix[r] - prefix[l - 1];
-  }
-}
+// // range sum
+// function evenIndexRangeSum(l, r) {
+//   if (l === 0) {
+//     return prefix[r];
+//   } else {
+//     return prefix[r] - prefix[l - 1];
+//   }
+// }
 
-console.log(evenIndexRangeSum(L, R)); // 15
+// console.log(evenIndexRangeSum(L, R)); // 15
 
+// New day................
+
+// let arr = [2,4,6,8,10,12,14,16,18,20];
+// let prefix = [];
+// prefix[0]=arr[0];
+
+// for(let i=1; i<arr.length; i++){
+//    prefix[i] = prefix[i-1] + arr[i];
+// }
+// console.log(prefix)
+
+// function sumOfElement (l,r){
+//   if(l === 0){
+//     return prefix[r];
+//   }else{
+//     return prefix[r] - prefix[l-1];
+//   }
+// }
+
+// const sumBetweenArrayIndex = sumOfElement(0,5);
+// console.log(`sum between given index of array is:`,sumBetweenArrayIndex);
+
+// let arr = [5,3,8,2,7,4,6];
+// let prefix = [];
+// prefix[0]=0;
+// prefix[0]=arr[0];
+
+// for(let i=1; i<arr.length; i++){
+//   if(i%2 === 0){
+//     prefix[i] = prefix[i-1] + arr[i];
+//   }else{
+//     prefix[i] = prefix[i-1];
+//   }
+// }
+
+// // range sum
+// function evenIndexRangeSum (l,r){
+//   if(l===0){
+//     return prefix[r];
+//   }else{
+//     return prefix[r] - prefix[l-1];
+//   }
+// }
+// console.log(evenIndexRangeSum(1,5));
+
+//You are given an integer array arr of size n.Build a prefix sum array such that:
+//prefix[i] = sum of elements from index i to the end of the array
+//(⚠️ This is a reverse prefix sum)
+
+// let arr = [1,2,3,4,5]
+// let prefix = [];
+// prefix[arr.length-1] = arr[arr.length-1];
+
+// for(let i=arr.length-2; i>-1; i--){
+//   prefix[i] = prefix[i+1] + arr[i];
+// }
+// console.log(prefix);
+
+//Build a prefix sum array such that: prefix[i] = sum of all elements ≤ 5 from index 0 to i
+//(⚠️ Only include elements whose value is ≤ 5)
+
+// let arr = [6, 2, 5, 1, 7, 4, 3]
+// let prefix = [];
+// if(arr[0]<=5){
+//   prefix[0] = arr[0];
+// }else {
+//   prefix[0] = 0;
+// }
+
+// for(let i=1; i<arr.length; i++){
+//    if(arr[i] <= 5){
+//     prefix[i] = prefix[i-1] + arr[i]
+//    }else {
+//     prefix[i] = prefix[i-1] + 0;
+//    }
+// }
+// console.log(prefix);
+
+// How many even numbers are present between index L and R (inclusive)?
+//arr = [2, 3, 4, 6, 5, 8, 7]
+//Queries:
+//(0, 3)
+//(2, 5)
+//(1, 6)
+
+// let arr = [2,3,4,6,5,8,7];
+// let prefix = [];
+
+// if(arr[0] % 2 === 0){
+//   prefix[0] = 1;
+// }else {
+//   prefix[0] = 0;
+// }
+
+// for(let i=1; i<arr.length; i++){
+//   if(arr[i] % 2 === 0){
+//     prefix[i] = prefix[i-1] + 1;
+//   }else {
+//     prefix[i] = prefix[i-1] + 0
+//   }
+// }
+// console.log(prefix);
+
+// // answer query
+
+// function countEven (l,r){
+//    if(l === 0){
+//      return prefix[r];
+//    }else {
+//     return prefix[r] - prefix[l-1];
+//    }
+// }
+// console.log("Even number between l and r :",countEven(1,5));
 
