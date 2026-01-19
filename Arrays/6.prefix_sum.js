@@ -244,3 +244,75 @@
 // }
 // console.log("Even number between l and r :",countEven(1,5));
 
+//Count number of elements divisible by 3 between L and R using prefix
+// let arr = [2,3,6,5,7,9,12,15,17,21];
+// let prefix = [];
+
+// if(arr[0] % 3 === 0){
+//     prefix[0] = 1;
+// }else {
+//     prefix[0] = 0;
+// }
+
+// for (let i = 1; i < arr.length; i++) {
+//     if(arr[i] % 3 === 0){
+//         prefix[i] = prefix[i-1] + 1;
+//     }else{
+//         prefix[i] = prefix[i-1] + 0;
+//     }
+// }
+
+// function divisibleCount (l,r){
+//     if(l === 0){
+//         return prefix[r];
+//     }else{
+//         return prefix[r] - prefix[l-1];
+//     }
+// }
+
+// console.log(divisibleCount(1,8));
+
+// Build a prefix array such that:  Only positive numbers should be added
+// let arr = [-2, 3, -1, 5, 4, -6, 2]
+// let prefix = [];
+
+// if(arr[0]>-1){
+//     prefix[0] = arr[0];
+// }else {
+//     prefix[0] = 0;
+// }
+
+// for(let i=1; i<arr.length; i++){
+//     if(arr[i]>-1){
+//         prefix[i] = prefix[i-1] + arr[i];
+//     }else{
+//         prefix[i] = prefix[i-1] + 0;
+//     }
+// }
+
+// function positiveSum (l,r){
+//     if(l=== 0){
+//         return prefix[r];
+//     }else{
+//         return prefix[r] - prefix[l-1];
+//     }
+// }
+// console.log(positiveSum(1,4));
+
+
+// Find the sum of all subarrays that start at index 0.
+// Input
+let arr = [2, 4, 1, 3];
+let sum ;
+let prefix = [];
+prefix[0] = arr[0];
+sum = prefix[0];
+
+for(let i=1; i<arr.length; i++){
+    console.log(sum)
+    prefix[i] = prefix[i-1] + arr[i];
+    sum = prefix[i];
+}
+console.log(prefix);
+
+
