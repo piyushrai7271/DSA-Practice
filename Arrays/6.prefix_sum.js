@@ -302,17 +302,41 @@
 
 // Find the sum of all subarrays that start at index 0.
 // Input
-let arr = [2, 4, 1, 3];
-let sum ;
+// let arr = [2, 4, 1, 3];
+// let prefix = [];
+// prefix[0] = arr[0];
+
+
+// for(let i=1; i<arr.length; i++){
+//     prefix[i] = prefix[i-1] + arr[i];
+// }
+// for(let j=0; j<prefix.length; j++){
+//     console.log(prefix[j]);
+//}
+
+// Print sum of all subarrays that end at the last index
+// let arr = [2, 4, 1, 3];
+// let prefix = [];
+// prefix[arr.length-1] = arr[arr.length-1];
+
+// for(let i=arr.length-2; i>=0 ; i--){
+//     prefix[i] = prefix[i+1] + arr[i];
+// }
+// for(let j= arr.length-1; j>=0; j--){
+//     console.log(prefix[j]);
+// }
+
+// You are given an integer array arr. Print the sum of all subarrays. (Subarray must be continuous)
+let arr = [1, 2, 3];
 let prefix = [];
 prefix[0] = arr[0];
-sum = prefix[0];
 
 for(let i=1; i<arr.length; i++){
-    console.log(sum)
     prefix[i] = prefix[i-1] + arr[i];
-    sum = prefix[i];
 }
-console.log(prefix);
-
+for(let j=0; j<arr.length; j++){
+    for(let k=j; k<arr.length; k++){
+        
+    }
+}
 
