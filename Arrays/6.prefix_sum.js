@@ -326,17 +326,4 @@
 //     console.log(prefix[j]);
 // }
 
-// You are given an integer array arr. Print the sum of all subarrays. (Subarray must be continuous)
-let arr = [1, 2, 3];
-let prefix = [];
-prefix[0] = arr[0];
-
-for(let i=1; i<arr.length; i++){
-    prefix[i] = prefix[i-1] + arr[i];
-}
-for(let j=0; j<arr.length; j++){
-    for(let k=j; k<arr.length; k++){
-        
-    }
-}
 
