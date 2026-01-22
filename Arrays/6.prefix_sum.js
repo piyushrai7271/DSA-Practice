@@ -15,7 +15,7 @@
 // let arr = [3, 6, 2, 8, 9, 4];
 // let n = arr.length;
 
-// // Build prefix sum array 
+// // Build prefix sum array
 // let prefix = [];
 // prefix[0] = arr[0];
 
@@ -66,7 +66,6 @@
 // }
 // console.log(sumOfElement(L,R));
 
-
 // Using prefix sum, find the sum of elements between indices L and R, excluding the elements at indices L and R.
 // let arr = [2, 5, 7, 3, 6, 4] ,L = 1 ,R = 4;
 // let prefix = [];
@@ -78,7 +77,7 @@
 
 // function sumOfElement (l,r){
 //    if(l === 0){
-//     return prefix[r-1] - prefix[0];// here we don't need l == 0 
+//     return prefix[r-1] - prefix[0];// here we don't need l == 0
 //    }else {
 //     return prefix[r-1] - prefix[l];
 //    }
@@ -95,7 +94,7 @@
 //     prefix[i] = prefix[i-1] + arr[i];
 // }
 
-// function sumOfElement (l,r){ 
+// function sumOfElement (l,r){
 //    return prefix[r-1] - prefix[l];
 // }
 // console.log(sumOfElement(L,R));
@@ -299,13 +298,11 @@
 // }
 // console.log(positiveSum(1,4));
 
-
 // Find the sum of all subarrays that start at index 0.
 // Input
 // let arr = [2, 4, 1, 3];
 // let prefix = [];
 // prefix[0] = arr[0];
-
 
 // for(let i=1; i<arr.length; i++){
 //     prefix[i] = prefix[i-1] + arr[i];
@@ -326,4 +323,46 @@
 //     console.log(prefix[j]);
 // }
 
+// You are given an integer array arr. 
+// Build a prefix sum array such that: sum of elements from index 0 to i that are odd numbers
+
+// let arr = [4, 1, 3, 2, 5, 6]
+// let prefix = [];
+
+// if(arr[0] % 2 !== 0){
+//     prefix[0] = arr[0];
+// }else {
+//     prefix[0] = 0;
+// }
+
+// for(let i=1; i<arr.length ; i++){
+//     if(arr[i] % 2 !== 0){
+//         prefix[i] = prefix[i-1] + arr[i];
+//     }else{
+//         prefix[i] = prefix[i-1] + 0;
+//     }
+// }
+// console.log(prefix);
+
+// You are given an integer array arr. Build a prefix array such that:
+// prefix[i] = (sum of all even numbers from index 0 to i)
+//           − (sum of all odd numbers from index 0 to i)
+
+// let arr = [5, 2, 3, 8, 1, 4]
+// let prefix = [];
+
+// if(arr[0] % 2 !== 0){
+//     prefix[0] = 0 - arr[0];
+// }else{
+//     prefix[0] = 0 + arr[0];
+// }
+
+// for(let i=1; i<arr.length; i++){
+//     if(arr[i] % 2 !== 0){
+//         prefix[i] = prefix[i-1] - arr[i];
+//     }else {
+//         prefix[i] = prefix[i-1] + arr[i];
+//     }
+// }
+// console.log(prefix);
 
