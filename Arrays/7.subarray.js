@@ -22,7 +22,7 @@
 
 // for (let i = 0; i < arr.length; i++) {          // start
 //   for (let j = i; j < arr.length; j++) {        // end
-    
+
 //     let sum = 0;
 //     for (let k = i; k <= j; k++) {               // sum elements
 //       sum = sum + arr[k];
@@ -54,7 +54,6 @@
 //     }
 //     console.log(subarr);
 // }
-
 
 // Print all subarrays of length k, where k = 2.
 // let arr = [1, 3, 5, 7, 9] , k = 2
@@ -117,7 +116,7 @@
 
 // let arr = [1, 2, 3, 4];
 
-// for (let i = 0; i < arr.length; i++) {                       
+// for (let i = 0; i < arr.length; i++) {
 //     for (let j = i; j < arr.length; j++) {
 
 //         let length = j - i + 1;
@@ -138,7 +137,6 @@
 //  {/*1-Choose a start index,  2-Choose an end index, 3-Check subarray length
 //  4-If length is even, 5-Calculate its sum 6-Print it*/}
 
-
 // Count how many subarrays have a sum greater than 5.
 // let arr = [1, 2, 3, 4];
 // let count = 0
@@ -152,7 +150,7 @@
 //             count ++;
 //            }
 //     }
-    
+
 // }
 // console.log(count);
 
@@ -167,24 +165,52 @@
 //         if(sum % 2 === 0){
 //             count ++
 //         }
-        
+
 //     }
 // }
 // console.log(count);
 
 //Find the length of the longest subarray whose sum is ≤ K.
-// let arr = [2, 1, 5, 1, 3, 2] , K = 7;
+// let arr = [2, 1, 5, 1, 3, 2],
+//   K = 7;
+// let largestSubarr = -Infinity;
+
+// for (let i = 0; i < arr.length; i++) {
+//   let count = 0;
+//   let sum = 0;
+//   for (let j = i; j < arr.length; j++) {
+//     sum = sum + arr[j];
+
+//     if (sum <= K) {
+//       count++;
+//     } else {
+//       break;
+//     }
+//   }
+//   if (count > largestSubarr) {
+//     largestSubarr = count;
+//   }
+// }
+// console.log(largestSubarr);
+
+// Count subarrays whose sum is ≤ K
+// let arr = [2, 1, 3] , K = 4;
 // let count = 0;
 
-// for (let i = 0; i < array.length; i++) {
+// for(let i=0; i<arr.length; i++){
 //     let sum = 0;
 //     for(let j=i; j<arr.length; j++){
 //         sum = sum + arr[j];
-//         let length = j-1+1;
+//           if(sum <= K){
+//              count ++;
+//           }else {
+//             break;
+//           }
 //     }
-    
 // }
+// console.log(count);
 
-
-
+// Find the length of the smallest subarray whose sum is ≥ K.
+let arr = [2, 3, 1, 2, 4, 3] , K = 7;
+let count = +Infinity;
 
