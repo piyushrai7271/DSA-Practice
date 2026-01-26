@@ -235,4 +235,48 @@
 //   smallestSubarrLength === Infinity ? 0 : smallestSubarrLength
 // );
 
+// Given an array of positive integers, count how many subarrays have sum exactly equal to K
+// let  arr = [1, 2, 1, 3] , K = 3
+// let subarrCount = 0;
+
+// for(let i=0; i<arr.length; i++){
+//      let sum = 0;
+//      let j = i;
+//      while(j<arr.length){
+//         sum = sum + arr[j];
+
+//         if (sum === K) {
+//             subarrCount++;
+//         }
+//         if (sum > K) {
+//             break;
+//         }
+
+//         j++;
+//      }
+// }
+// console.log(subarrCount);
+
+// //Count subarrays whose sum is less than or equal to K
+// let arr = [1,2,4,6,3,7] ,k=3
+// let countSubArr = 0;
+
+// for(let i=0; i<arr.length; i++){
+//     let sum = 0
+//     for(let j=i; j<arr.length; j++){
+//         sum = sum + arr[j];
+//         if(sum <= 3){
+//             countSubArr++;
+//         }else {
+//             break; // remove this for negative number
+//         }
+//     }
+// }
+// console.log(countSubArr);
+
+// Longest subarray whose sum is ≤ K , Return the length, not the count.
+// let arr = [2, 1, 5, 1, 3, 2],
+//   K = 7;
+// let longestSubArray = -Infinity;
+
 
