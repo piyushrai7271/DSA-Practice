@@ -275,8 +275,75 @@
 // console.log(countSubArr);
 
 // Longest subarray whose sum is ≤ K , Return the length, not the count.
-// let arr = [2, 1, 5, 1, 3, 2],
-//   K = 7;
+// let arr = [2, 1, 5, 1, 3, 2] , K = 7
 // let longestSubArray = -Infinity;
+
+// for(let i=0; i<arr.length; i++){
+//     let sum = 0; let count = 0;
+//     for(let j=i; j<arr.length; j++){
+//         sum = sum + arr[j];
+//         if(sum <= K){
+//             count ++;
+//         }else {
+//             break;
+//         }
+//     }
+//     if(count > longestSubArray){
+//         longestSubArray = count;
+//     }
+// }
+// console.log(longestSubArray)
+
+// Count all subarrays whose sum is exactly K.
+// let arr = [1, 2, 1, 3], K = 3
+// let subarrCount = 0;
+
+// for(let i=0; i<arr.length; i++){
+//     let sum = 0
+//     for(let j=i; j<arr.length; j++){
+//         sum = sum + arr[j];
+//         if(sum > K){
+//             break;
+//         }else if(sum === K){
+//             subarrCount++;
+//         }
+//     }
+// }
+// console.log(subarrCount);
+
+// Find the length of the smallest subarray whose sum is ≥ K.
+// let arr = [2, 3, 1, 2, 4, 3] , K = 7
+// let smallSubLength = +Infinity;
+
+// for(let i=0; i<arr.length; i++){
+//     let sum = 0;
+//     for(let j=i; j<arr.length; j++){
+//        let length = j-i+1;
+//        sum = sum + arr[j];
+//        if(sum >= K){
+//          if(length < smallSubLength){
+//              smallSubLength = length;
+//          }
+//          break;
+//        }
+//     }
+// }
+// console.log(smallSubLength);
+
+// Count subarrays whose sum is divisible by K.
+// let arr = [2, 3, 1, 4] , K = 3
+// let subCount = 0;
+
+// for(let i=0; i<arr.length; i++){
+//     let sum = 0;
+//     for(let j=i; j<arr.length; j++){
+//        sum = sum + arr[j];
+//        if(sum % 3 === 0){
+//         subCount ++;
+//        }
+//     }
+// }
+// console.log(subCount);
+
 
 

@@ -366,3 +366,57 @@
 // }
 // console.log(prefix);
 
+// OPTIMIZED PREFIX SUM QUESTION..............
+//Count subarrays whose sum is exactly K.
+// let arr = [1, 2, 1, 3] , K = 3
+// let prefix = [];
+// prefix[0] = arr[0];
+
+// for(let i=1; i<arr.length; i++){
+//     prefix[i] = prefix[i-1] + arr[i];
+// }
+
+// let count = 0;
+
+// for(let l=0; l<arr.length; l++){
+//     for(let r=l ; r<arr.length; r++){
+
+//         let sum;
+//         if(l===0){
+//             sum = prefix[r];
+//         }else{
+//             sum = prefix[r] - prefix[l-1];
+//         }
+
+//         if(sum === K){
+//             count++;
+//         }
+//     }
+// }
+// console.log(count);
+
+//Count the number of subarrays whose sum is greater than or equal to K.
+// let arr = [2, 1, 3, 2] ,K = 4;
+// let prefix = [];
+
+// prefix[0] = arr[0];
+
+// for(let i=1; i<arr.length; i++){
+//     prefix[i] = prefix[i-1] + arr[i];
+// }
+
+// let subarrCount =0 ;
+// for(let l = 0 ; l<arr.length; l++){
+//     for(let r = l; r<arr.length; r++){
+//        let sum;
+//        if(l===0){
+//         sum = prefix[r];
+//        }else {
+//         sum = prefix[r] - prefix[l-1];
+//        }
+//        if(sum >= K){
+//         subarrCount++
+//        }
+//     }
+// }
+// console.log(subarrCount);
