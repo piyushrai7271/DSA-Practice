@@ -72,12 +72,12 @@
 // Implement insertAtTail(value)
 // Rules:
 // If list is empty → new node becomes head
-// Otherwise → go to last node and attach {wrong code}
+// Otherwise → go to last node and attach {wrong solution done by me in first attempt }
 
 // class Node {
 //     constructor(value){
 //         this.value = value;
-//         this.next = null;
+//         this.next = null; 
 //     }
 // }
 
@@ -100,32 +100,35 @@
 //     }
 // }
 
-class Node {
-    constructor(value){
-        this.value = value;
-        this.next = null;
-    }
-}
+// current fixed code
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
 
-class LinkedList {
-    constructor(){
-        this.head = null;
-    }
+// class LinkedList {
+//     constructor(){
+//         this.head = null;
+//     }
 
-    insertAtTail(value){
-        const newNode = new Node(value);
+//     insertAtTail(value){
+//         const newNode = new Node(value);
 
-        if(this.head === null){
-            this.head = newNode;
-            return;
-        }
+//         if(this.head === null){
+//             this.head = newNode;
+//             return;
+//         }
 
-        let current = this.head;
-        while(current.next !== null){
-            current = current.next;
-        }
+//         let current = this.head;
+//         while(current.next !== null){
+//             current = current.next;
+//         }
 
-        current.next = newNode;
-    }
-}
+//         current.next = newNode;
+//     }
+// }
+
+
 
