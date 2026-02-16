@@ -73,57 +73,83 @@
 
 // New Day...........
 
-function Stack() {
-  this.items = [];
-}
+// function Stack() {
+//   this.items = [];
+// }
 
-Stack.prototype.push = function (elem) {
-  return (this.items[this.items.length] = elem);
-};
+// Stack.prototype.push = function (elem) {
+//   return (this.items[this.items.length] = elem);
+// };
 
-Stack.prototype.pop = function () {
-  if (this.isEmpty()) {
-    return "Stack is Empty.";
-  }
+// Stack.prototype.pop = function () {
+//   if (this.isEmpty()) {
+//     return "Stack is Empty.";
+//   }
 
-  return this.items.pop();
-};
+//   return this.items.pop();
+// };
 
-Stack.prototype.peek = function () {
-  if (this.isEmpty()) {
-    return "Stack is Empty";
-  }
+// Stack.prototype.peek = function () {
+//   if (this.isEmpty()) {
+//     return "Stack is Empty";
+//   }
 
-  return this.items[this.size() - 1];
-};
+//   return this.items[this.size() - 1];
+// };
 
-Stack.prototype.isEmpty = function () {
-  return this.size() === 0;
-};
+// Stack.prototype.isEmpty = function () {
+//   return this.size() === 0;
+// };
 
-Stack.prototype.size = function () {
-  return this.items.length;
-};
+// Stack.prototype.size = function () {
+//   return this.items.length;
+// };
 
-Stack.prototype.travers = function(){
-    if(this.isEmpty()){
-        console.log("Stack is Empty ");
-        return;
-    }
+// Stack.prototype.travers = function(){
+//     if(this.isEmpty()){
+//         console.log("Stack is Empty ");
+//         return;
+//     }
 
-    for(let i=0; i < this.items.length ; i++){
-        console.log(this.items[i]);
-    }
-}
+//     for(let i=0; i < this.items.length ; i++){
+//         console.log(this.items[i]);
+//     }
+// }
 
-let stack = new Stack();
-stack.push(10);
-stack.push(20);
-stack.push(30);
-stack.push(40);
-stack.push(50);
-console.log("Last Element :",stack.pop());
-console.log("Is stack Empty :",stack.isEmpty());
-console.log("Last element :",stack.peek());
-console.log("Size of the stack :",stack.size());
-stack.travers();
+// let stack = new Stack();
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
+// stack.push(40);
+// stack.push(50);
+// console.log("Last Element :",stack.pop());
+// console.log("Is stack Empty :",stack.isEmpty());
+// console.log("Last element :",stack.peek());
+// console.log("Size of the stack :",stack.size());
+// stack.travers();
+
+// new Day................
+
+// create stack
+// function Stack (){
+//   this.items = [];
+// }
+
+
+// Stack.prototype.push = function(value){
+//   return this.items[this.items.length] = value;
+// }
+// Stack.prototype.pop = function (){
+//   if(this.isEmpty()){
+//     return "Stack is empty"
+//   }
+//   return this.items[this.items.length -1] ;
+// }
+// Stack.prototype.peek = function (){}
+// Stack.prototype.isEmpty = function(){
+//   return this.size() === 0;
+// }
+// Stack.prototype.size = function (){
+//   return this.items.length;
+// }
+// Stack.prototype.travers = function (){}
