@@ -153,3 +153,56 @@
 //   return this.items.length;
 // }
 // Stack.prototype.travers = function (){}
+
+// New Day...........
+
+// create stack
+function Stack (){
+    this.items = [];
+}
+
+// Push element at last index of array
+Stack.prototype.push = function (value){
+   this.items[this.items.length] = value
+}
+
+// pop meanse take out last element of stack
+Stack.prototype.pop = function (){
+    if(this.items.length === null) return null;
+
+    return this.items[this.items.length-1];
+}
+
+// check array is empty
+Stack.prototype.isEmpty = function (){
+    return this.size() === 0;
+}
+
+// check size
+Stack.prototype.size = function (){
+    return this.items.length;
+}
+
+// peek 
+Stack.prototype.peek = function (){}
+
+// travers the array
+Stack.prototype.travers = function (){
+    if(this.items.length === null) return null;
+    for(let i=0; i<this.items.length; i++){
+        console.log(this.items[i]);
+    }
+}
+
+let stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.push(40);
+stack.push(50);
+let lastElement = stack.pop();
+console.log("Last element of stack is :",lastElement);
+stack.isEmpty();
+stack.peek();
+stack.size();
+stack.travers()
