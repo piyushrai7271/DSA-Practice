@@ -141,6 +141,17 @@
 // console.log(isPalindrome(121)); // true
 // console.log(isPalindrome(123)); // false
 
+// let arr = [1,2,3,4,5];
+// function sum (...arg){
+//     let sum = 0;
+//     for(let i=0; i<arg.length; i++){
+//         sum = sum + arg[i];
+//     }
+//     return sum;
+// }
+
+// console.log(sum(...arr));
+
 
 
 
