@@ -1,15 +1,15 @@
-// find sum 
+// find sum
 // function sum(...args) {
-//     // Your implementation
+// function sum (...args){
 //     let sum = 0;
-//     for (let i = 0; i < args.length; i++){
+//     for(let i=0; i<args.length; i++){
 //         sum = sum + args[i];
 //     }
 //     return sum;
 // }
 
 // //For the purpose of user debugging.
-// sum(100, 200, 300, 400);
+// console.log(sum(100, 200, 300, 400));
 
 // Given an alphanumeric string s, return the second largest numerical digit that appears in s, or -1 if it does not exist.
 // Example 1:
@@ -18,142 +18,117 @@
 // Output: 2
 // Explanation: The digits that appear in s are [1, 2, 3]. The second largest digit is 2.
 
-// let s = "dfa12321afd"
-// var secondHighest = function(s) {
-//     let firstHighest = -1;
-//     let second = -1;
+// let numbers = "dfa12321afd";
 
-//     for (let i = 0; i < s.length; i++) {
-//         if (!isNaN(s[i])) {
-//             let num = Number(s[i]);
+// function secondLargest(s){
+//     let firstL = -1;
+//     let secondL = -1;
 
-//             if (num > firstHighest) {
-//                 second = firstHighest;
-//                 firstHighest = num;
-//             } 
-//             else if (num < firstHighest && num > second) {
-//                 second = num;
+//     for(let i = 0; i < s.length; i++){
+//         if(!isNaN(s[i])){
+//             let digit = Number(s[i]);
+
+//             if(digit > firstL){
+//                 secondL = firstL;
+//                 firstL = digit;
+//             }
+//             else if(digit < firstL && digit > secondL){
+//                 secondL = digit;
 //             }
 //         }
 //     }
 
-//     return second;
-// };
-// secondHighest()
+//     return secondL;
+// }
 
-// Given an integer x, return true if x is a palindrome, and false otherwise.
+// console.log(secondLargest(numbers)); // 2
+
+//Given an integer x, return true if x is a palindrome, and false otherwise.
+
 // Example 1:
 
 // Input: x = 121
 // Output: true
 // Explanation: 121 reads as 121 from left to right and from right to left.
+// Example 2:
 
-// let x = 123;
-// var isPalindrome = function(x) {
-    
-// };
+// Input: x = -121
+// Output: false
+// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
 
-// let num = 123
-// let first = num%10; // giving last number 
-// let firstDivid = Math.floor(num/10);  // giving remaning number
-// console.log(first);
-// console.log(firstDivid);
-// let second = firstDivid%10;
-// let secondDivid = Math.floor(firstDivid/10);
-// console.log(second);
-// console.log(secondDivid);
+// let number = 121;
 
-// let num = 12345;
+// function isPalindrom(number) {
 
-// function printRevers (num) {
+//   // handle negative numbers
+//   if (number < 0) return false;
 
-//     while(num > 0){
-//         console.log(num%10);
-//         num = Math.floor(num/10);
-//     }
+//   let fixedNumber = number;
+//   let lastDigit = 0;
+//   let reverse = 0;
+
+//   while (number > 0) {
+//     lastDigit = number % 10;
+//     reverse = reverse * 10 + lastDigit;
+//     number = Math.floor(number / 10);
+//   }
+
+//   return reverse === fixedNumber;
 // }
 
-// printRevers(num);
+// console.log(isPalindrom(number));
 
 
-// let num = 12345;
 
-// function printRevers (num) {
-//     let count = 0;
-//     while(num > 0){
-//         // console.log(num%10);
-//         count++;
-//         num = Math.floor(num/10);
+// let number = 121;
+
+// let lastNumber = number%10;
+// let remeningNumber = Math.floor(number/10);
+// console.log("last number :",lastNumber);
+// console.log("Remening Number :",remeningNumber);
+
+
+// let number = -12345
+
+// function reverse (number){
+//     if(number < 0) return 0;
+//     let lastDigit = 0
+//     let reverseNumber = 0
+//     while(number > 0){
+//        lastDigit = number%10;
+//        reverseNumber = reverseNumber*10 + lastDigit;
+//        number = Math.floor(number/10);
 //     }
-//     return count;
+//     return reverseNumber;
 // }
 
-// console.log("Count of  number :",printRevers(num));
+// console.log("Reverse Number is :",reverse(number));
 
-// let num = 12345;
+// find largest number....
+// function findLargest(arr) {
+//   // your solution here
 
-// function printRevers (num) {
-//     let sum = 0;
-//     while(num > 0){
-//         let lastNum = num%10;
-//         sum = sum + lastNum;
-//         num = Math.floor(num/10);
-//     }
-//     return sum;
-// }
+//   // check the input is array
+//   if (!Array.isArray(arr)) {
+//     return false;
+//   }
 
-// console.log("Sum of  number :",printRevers(num));
+//   // check array is null
+//   if (arr.length === 0) {
+//     return null;
+//   }
 
-// let num = -12345;
+//   let largestNumber = -Infinity;
+//   for (let i = 0; i < arr.length; i++){
+//     let number = arr[i];
 
-// function reverseNumber(num) {
-//     let sign = num < 0 ? -1 : 1;
-//     num = Math.abs(num);
-
-//     let reNumber = 0;
-
-//     while (num > 0) {
-//         let lastNum = num % 10;
-//         reNumber = reNumber * 10 + lastNum;
-//         num = Math.floor(num / 10);
+//     if (typeof number !== "number" || !Number.isFinite(number)) {
+//       return false;
 //     }
 
-//     return reNumber * sign;
-// }
-
-// console.log("Reverse of number:", reverseNumber(num));
-
-// check the number is palindrom 
-
-// function isPalindrome(num) {
-//     let original = num;
-//     let reversed = 0;
-
-//     while (num > 0) {
-//         let digit = num % 10;
-//         reversed = reversed * 10 + digit;
-//         num = Math.floor(num / 10);
+//     if (number > largestNumber) {
+//       largestNumber = number;
 //     }
+//   }
 
-//     return original === reversed;
 // }
-
-// console.log(isPalindrome(121)); // true
-// console.log(isPalindrome(123)); // false
-
-// let arr = [1,2,3,4,5];
-// function sum (...arg){
-//     let sum = 0;
-//     for(let i=0; i<arg.length; i++){
-//         sum = sum + arg[i];
-//     }
-//     return sum;
-// }
-
-// console.log(sum(...arr));
-
-
-
-
-
-
