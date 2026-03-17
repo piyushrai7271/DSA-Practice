@@ -157,7 +157,6 @@ linkedList.prototype.addItemAtHead = function (value) {
 
 //add item at given index
 linkedList.prototype.addItemAtIndex = function (value, index) {
-
   if (index < 0 || index > this.length) return null;
 
   const newNode = new Node(value);
@@ -186,7 +185,17 @@ linkedList.prototype.addItemAtIndex = function (value, index) {
 };
 
 //delete item at head
-linkedList.prototype.deleteHeadItem = function () {};
+linkedList.prototype.deleteHeadItem = function () {
+  let currentNode = this.head;
+  if (this.head === null) {
+    console.log(null);
+  } else {
+    this.head = currentNode.next;
+    currentNode.next = null;
+  }
+  this.length--;
+  return currentNode.value;
+};
 
 // delete tail item
 linkedList.prototype.deleteTailItem = function () {};
@@ -221,8 +230,8 @@ list.addItem(30);
 list.addItem(40);
 list.addItem(50);
 list.addItemAtHead(0);
-list.addItemAtIndex(25,2);
-// list.deleteHeadItem();
+list.addItemAtIndex(25, 2);
+console.log("Deleted Node is :", list.deleteHeadItem());
 // list.deleteTailItem();
 // list.deleteAtGivenIndex();
 // list.updateAtGivenIndex();

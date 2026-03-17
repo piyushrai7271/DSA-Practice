@@ -225,8 +225,6 @@
 
 // console.log("Second Largest Element :", findSecondLargestElem(arr));
 
-
-
 // Find the element that appears more than n/2 times.
 
 // Input:
@@ -245,7 +243,7 @@
 // let half = arr.length/2;
 
 // for(let i=0; i<arr.length; i++){
-//     let count = 0 
+//     let count = 0
 //     for(let j= i+1; j<arr.length; j++){
 //        if(arr[j] === arr[i]){
 //         count ++;
@@ -258,4 +256,110 @@
 
 // we can handle this using using object which will reduce time complexity
 
+// Find the missing number in an array.
+// Example:
+// Input:
+// [1,2,3,5,6]
 
+// Output:
+// 4
+
+// function findMissingElement(arr) {
+//   if (!Array.isArray(arr) || arr.length === 0) return null;
+
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i + 1] - arr[i] > 1) {
+//       return arr[i] + 1;
+//     }
+//   }
+
+//   return null;
+// }
+
+// console.log(findMissingElement([1,2,3,5,6,7,8,9,10]));
+
+// TWO POINTER PATTERN .............
+
+// Reverse an array in-place
+// Input:[1,2,3,4,5]
+// Output:[5,4,3,2,1]
+// Conditions:
+
+// ❌ Do not create new array
+
+// ✔ Use two pointers
+
+// let arr = [1,2,3,4,5];
+
+// function reverseArray (arr){
+//     if(!Array.isArray(arr) || arr.length === 0) return null;
+
+//     for(let i=0,j=arr.length-1; i<j; i++,j--){
+//         let temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp
+//     }
+//     return arr;
+// }
+
+// console.log("Reversed array is :",reverseArray(arr));
+
+// Move all zeros to the end of the array
+// Input: [0,1,0,3,12]
+
+// Output:[1,3,12,0,0]
+
+// Conditions:
+// Maintain relative order of non-zero elements
+// Do it in-place
+// Use two pointers
+
+// let arr = [0, 1, 0, 3, 12];
+// let nonZeroIndex = 0;
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] !== 0) {
+//     let temp = arr[nonZeroIndex];
+//     arr[nonZeroIndex] = arr[i];
+//     arr[i] = temp;
+//     nonZeroIndex++;
+//   }
+// }
+// console.log(arr);
+
+// function moveZerosAtLast(arr) {
+//   if (!Array.isArray(arr) || arr.length === 0) return null;
+
+//   let nonZeroIndex = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== 0) {
+//       let temp = arr[nonZeroIndex];
+//       arr[nonZeroIndex] = arr[i];
+//       arr[i] = temp;
+//       nonZeroIndex++;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log("Updated array :",moveZerosAtLast([0, 1, 0, 3, 12]));
+
+// Now we move to a classic two pointer interview problem.
+// Check if a string is a palindrome
+// Input:"racecar"
+// Output:true
+
+// let str = "racecar";
+// function isPalindrome(str){
+//   if (typeof str !== "string") return false;
+
+//   for(let i=0, j=str.length-1; i<j; i++, j--){
+//     if(str[i] !== str[j]){
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// console.log("Is this string is palindrom :",isPalindrom(str));
