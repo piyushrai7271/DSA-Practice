@@ -363,3 +363,122 @@
 // }
 
 // console.log("Is this string is palindrom :",isPalindrom(str));
+
+
+// New Day.............
+
+// 🧠 Question: Two Sum (Sorted Array)
+// You are given:
+// A sorted array (in increasing order)
+// A target number
+// Task:
+// Find two numbers such that:
+// arr[i] + arr[j] = target
+// Return their indices.
+// 📌 Example 1
+// Input:
+// arr = [1,2,3,4,6]
+// target = 6
+
+// Valid pairs:
+
+// 2 + 4 = 6
+
+// Indices:
+
+// [1,3]
+
+// let arr = [1,2,3,4,6];
+// function twoSum(arr, target){
+//    if(!Array.isArray(arr)) return null;
+
+//    let i = 0;
+//    let j = arr.length - 1;
+
+//    while(i < j){
+//       let sum = arr[i] + arr[j];
+
+//       if(sum < target){
+//         i++;
+//       } else if(sum > target){
+//         j--;
+//       } else {
+//         return [i, j];
+//       }
+//    }
+
+//    return null;
+// }
+
+// console.log(twoSum(arr,6));
+
+
+
+// Remove duplicates from sorted array (in-place)
+
+// Example:
+// Input: [1,1,2,2,3,4,4]
+// Output:
+// k = 4
+// arr = [1,2,3,4,_,_,_]
+// Conditions:
+// Do it in-place
+// Return count of unique elements (k)
+// Maintain order
+// Use two pointers
+
+// function removeDuplicates(arr){
+//   if (!Array.isArray(arr) || arr.length === 0) return 0;
+
+//   let slow = 0;
+
+//   for (let fast = 1; fast < arr.length; fast++) {
+
+//     if (arr[fast] !== arr[slow]) {
+//       slow++;
+//       arr[slow] = arr[fast];
+//     }
+
+//   }
+
+//   return slow + 1;
+// }
+
+// let arr = [1,1,2,2,3,4,4];
+// let k = removeDuplicates(arr);
+
+// console.log("k:", k);
+// console.log("Updated array:", arr);
+
+
+
+// Remove all occurrences of a given value in-place
+// Example:
+// Input: arr = [3,2,2,3]
+// val = 3
+// Output:
+// k = 2
+// arr = [2,2,_,_]
+
+function removeElement(arr, val){
+  if (!Array.isArray(arr)) return 0;
+
+  let k = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+
+    if (arr[i] !== val) {
+      arr[k] = arr[i];
+      k++;
+    }
+
+  }
+
+  return k;
+}
+
+let arr = [3,2,2,3];
+let k = removeElement(arr, 3);
+
+console.log("k:", k);
+console.log("Updated array:", arr);

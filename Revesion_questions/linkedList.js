@@ -114,6 +114,133 @@
 // NEW DAY ............................
 
 // create Node
+// function Node(value, next = null) {
+//   this.value = value;
+//   this.next = next;
+// }
+
+// // create linked list
+// function linkedList() {
+//   this.head = null;
+//   this.length = 0;
+// }
+
+// // add new Item
+// linkedList.prototype.addItem = function (value) {
+//   let newNode = new Node(value);
+
+//   if (this.head === null) {
+//     this.head = newNode;
+//   } else {
+//     let currentNode = this.head;
+//     while (currentNode.next !== null) {
+//       currentNode = currentNode.next;
+//     }
+//     currentNode.next = newNode;
+//   }
+//   this.length++;
+// };
+
+// // add item at head
+// linkedList.prototype.addItemAtHead = function (value) {
+//   let newNode = new Node(value);
+
+//   if (this.head === null) {
+//     this.head = newNode;
+//   } else {
+//     let nextNode = this.head.next;
+//     this.head = newNode;
+//     newNode.next = nextNode;
+//   }
+//   this.length++;
+// };
+
+// //add item at given index
+// linkedList.prototype.addItemAtIndex = function (value, index) {
+//   if (index < 0 || index > this.length) return null;
+
+//   const newNode = new Node(value);
+
+//   // insert at head
+//   if (index === 0) {
+//     newNode.next = this.head;
+//     this.head = newNode;
+//     this.length++;
+//     return;
+//   }
+
+//   let count = 0;
+//   let current = this.head;
+//   let prev = null;
+
+//   while (count < index) {
+//     prev = current;
+//     current = current.next;
+//     count++;
+//   }
+
+//   prev.next = newNode;
+//   newNode.next = current;
+//   this.length++;
+// };
+
+// //delete item at head
+// linkedList.prototype.deleteHeadItem = function () {
+//   let currentNode = this.head;
+//   if (this.head === null) {
+//     console.log(null);
+//   } else {
+//     this.head = currentNode.next;
+//     currentNode.next = null;
+//   }
+//   this.length--;
+//   return currentNode.value;
+// };
+
+// // delete tail item
+// linkedList.prototype.deleteTailItem = function () {};
+
+// // delete at given index
+// linkedList.prototype.deleteAtGivenIndex = function (index) {};
+
+// // update at given index
+// linkedList.prototype.updateAtGivenIndex = function (index) {};
+
+// // update at head item
+// linkedList.prototype.updateHeadItem = function () {};
+
+// // update at tail item
+// linkedList.prototype.updateTailItem = function () {};
+
+// // travers the linked list item
+// linkedList.prototype.travers = function () {
+//   if (this.head === null) return null;
+
+//   let currentNode = this.head;
+//   while (currentNode !== null) {
+//     console.log(currentNode.value);
+//     currentNode = currentNode.next;
+//   }
+// };
+
+// let list = new linkedList();
+// list.addItem(10);
+// list.addItem(20);
+// list.addItem(30);
+// list.addItem(40);
+// list.addItem(50);
+// list.addItemAtHead(0);
+// list.addItemAtIndex(25, 2);
+// console.log("Deleted Node is :", list.deleteHeadItem());
+// // list.deleteTailItem();
+// // list.deleteAtGivenIndex();
+// // list.updateAtGivenIndex();
+// // list.updateHeadItem();
+// // list.updateTailItem();
+// list.travers();
+
+// NEW DAY.................
+//create node
 function Node(value, next = null) {
   this.value = value;
   this.next = next;
@@ -125,7 +252,7 @@ function linkedList() {
   this.length = 0;
 }
 
-// add new Item
+// add new node
 linkedList.prototype.addItem = function (value) {
   let newNode = new Node(value);
 
@@ -141,25 +268,25 @@ linkedList.prototype.addItem = function (value) {
   this.length++;
 };
 
-// add item at head
+// add new node at head
 linkedList.prototype.addItemAtHead = function (value) {
   let newNode = new Node(value);
 
   if (this.head === null) {
     this.head = newNode;
   } else {
-    let nextNode = this.head.next;
+    let currentNode = this.head;
     this.head = newNode;
-    newNode.next = nextNode;
+    newNode.next = currentNode;
   }
   this.length++;
 };
 
-//add item at given index
+// add new node at given index
 linkedList.prototype.addItemAtIndex = function (value, index) {
   if (index < 0 || index > this.length) return null;
 
-  const newNode = new Node(value);
+  let newNode = new Node(value);
 
   // insert at head
   if (index === 0) {
@@ -171,48 +298,55 @@ linkedList.prototype.addItemAtIndex = function (value, index) {
 
   let count = 0;
   let current = this.head;
-  let prev = null;
-
-  while (count < index) {
-    prev = current;
+  let prevNode = null;
+  while(count < index){
+    prevNode = current;
     current = current.next;
     count++;
   }
-
-  prev.next = newNode;
+  prevNode.next = newNode;
   newNode.next = current;
   this.length++;
 };
 
-//delete item at head
-linkedList.prototype.deleteHeadItem = function () {
+// delete at head node
+linkedList.prototype.deleteHeadItem = function (){
+  if(this.head === null) return null;
+
   let currentNode = this.head;
-  if (this.head === null) {
-    console.log(null);
-  } else {
-    this.head = currentNode.next;
-    currentNode.next = null;
+  this.head = currentNode.next
+  currentNode.next = null;
+  this.length --;
+  return currentNode.value;
+}
+
+// delete tail node
+linkedList.prototype.deleteTailItem = function (){
+  // case 1: empty list
+  if(this.head === null){
+    return null;
   }
+  // case 2: only one node
+  if(this.head.next === null){
+    let deleteValue = this.head.value;
+    this.head = null;
+    this.length--;
+    return deleteValue;
+  }
+  // case 3: more than one node
+  let prevNode = null;
+  let currentNode = this.head;
+  while(currentNode.next !== null){
+    prevNode = currentNode;
+    currentNode = currentNode.next;
+  }
+  prevNode.next = null;
   this.length--;
   return currentNode.value;
-};
+}
 
-// delete tail item
-linkedList.prototype.deleteTailItem = function () {};
 
-// delete at given index
-linkedList.prototype.deleteAtGivenIndex = function (index) {};
-
-// update at given index
-linkedList.prototype.updateAtGivenIndex = function (index) {};
-
-// update at head item
-linkedList.prototype.updateHeadItem = function () {};
-
-// update at tail item
-linkedList.prototype.updateTailItem = function () {};
-
-// travers the linked list item
+// travers the linked list
 linkedList.prototype.travers = function () {
   if (this.head === null) return null;
 
@@ -230,11 +364,7 @@ list.addItem(30);
 list.addItem(40);
 list.addItem(50);
 list.addItemAtHead(0);
-list.addItemAtIndex(25, 2);
+list.addItemAtIndex(15,2);
 console.log("Deleted Node is :", list.deleteHeadItem());
-// list.deleteTailItem();
-// list.deleteAtGivenIndex();
-// list.updateAtGivenIndex();
-// list.updateHeadItem();
-// list.updateTailItem();
+console.log("Deleted tail Node :",list.deleteTailItem());
 list.travers();
