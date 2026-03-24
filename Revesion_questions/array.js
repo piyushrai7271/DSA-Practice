@@ -460,25 +460,25 @@
 // k = 2
 // arr = [2,2,_,_]
 
-function removeElement(arr, val){
-  if (!Array.isArray(arr)) return 0;
+// function removeElement(arr, val){
+//   if (!Array.isArray(arr)) return 0;
 
-  let k = 0;
+//   let k = 0;
 
-  for (let i = 0; i < arr.length; i++) {
+//   for (let i = 0; i < arr.length; i++) {
 
-    if (arr[i] !== val) {
-      arr[k] = arr[i];
-      k++;
-    }
+//     if (arr[i] !== val) {
+//       arr[k] = arr[i];
+//       k++;
+//     }
 
-  }
+//   }
 
-  return k;
-}
+//   return k;
+// }
 
-let arr = [3,2,2,3];
-let k = removeElement(arr, 3);
+// let arr = [3,2,2,3];
+// let k = removeElement(arr, 3);
 
-console.log("k:", k);
-console.log("Updated array:", arr);
+// console.log("k:", k);
+// console.log("Updated array:", arr);
