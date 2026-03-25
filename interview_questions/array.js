@@ -79,7 +79,7 @@
 
 // console.log("Second Largest number in Array :",secondLargest([10,5,8,20,15]));
 
-//🔹 Next Pattern: Two Pointer
+//🔹 Next Pattern: Two Pointer.................................
 
 // 🧠 Question 1 (Two Pointer – Classic)
 
@@ -181,7 +181,6 @@
 
 // console.log(moveZerosAtLast([0, 1, 0, 3, 12]));
 
-
 // OTHER METHOD TO SOLVE THIS QUESTION....
 // function moveZeros(arr) {
 //   let index = 0;
@@ -198,3 +197,89 @@
 
 //   return arr;
 // }
+
+// NEW DAY..................................
+
+// QUESTION:-
+// Given a sorted array, remove duplicates such that each element can appear at most twice.
+// Return the new length.
+// Example:
+// Input: [1,1,1,2,2,3]
+// Output: 5
+
+// Modified array: [1,1,2,2,3]
+// Input: [0,0,1,1,1,1,2,3,3]
+// Output: 7
+
+// Modified array: [0,0,1,1,2,3,3]
+
+// let arr = [0,0,1,1,1,1,2,3,3];
+
+// function removeDuplicates(arr) {
+//     if (!Array.isArray(arr) || arr.length === 0) return 0;
+
+//     let slow = 0;
+
+//     for (let fast = 0; fast < arr.length; fast++) {
+//         if (slow < 2 || arr[fast] !== arr[slow - 2]) {
+//             arr[slow] = arr[fast];
+//             slow++;
+//         }
+//     }
+
+//     return slow;
+// }
+
+// console.log("Length of arr :",removeDuplicates(arr));
+
+
+
+// 🧠 Question
+
+// Given a sorted array, remove all duplicates completely (keep only elements that appear once).
+// Example:
+// Input: [1,1,2,3,3,4]
+// Output: [2,4]
+// 🎯 Task
+// In-place if possible (or explain why not)
+// Return result
+
+// let arr = [1,1,2,3,3,4];
+
+// function removeAllDuplicates(arr) {
+//     if (!Array.isArray(arr) || arr.length === 0) return [];
+
+//     let slow = 0;
+//     let fast = 0;
+
+//     while (fast < arr.length) {
+//         let start = fast;
+
+//         // Move fast to end of current group
+//         while (fast < arr.length && arr[fast] === arr[start]) {
+//             fast++;
+//         }
+
+//         // Check group size
+//         if (fast - start === 1) {
+//             arr[slow] = arr[start];
+//             slow++;
+//         }
+//     }
+
+//     return arr.slice(0, slow);
+// }
+
+
+// console.log(removeAllDuplicates(arr));
+
+
+// 🔹 Next Pattern: Sliding Window (🔥 Very Important)..............
+
+// Find the maximum sum of subarray of size k
+
+// Example:
+// Input: arr = [2, 1, 5, 1, 3, 2], k = 3  
+// Output: 9   // [5,1,3]
+
+
