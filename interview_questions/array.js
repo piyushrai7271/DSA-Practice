@@ -283,3 +283,21 @@
 // Output: 9   // [5,1,3]
 
 
+// function maxSumSubarray(arr, k) {
+//     let windowSum = 0;
+
+//     // Step 1: First window
+//     for (let i = 0; i < k; i++) {
+//         windowSum += arr[i];
+//     }
+
+//     let maxSum = windowSum;
+
+//     // Step 2: Slide window
+//     for (let i = k; i < arr.length; i++) {
+//         windowSum = windowSum - arr[i - k] + arr[i];
+//         maxSum = Math.max(maxSum, windowSum);
+//     }
+
+//     return maxSum;
+// }
