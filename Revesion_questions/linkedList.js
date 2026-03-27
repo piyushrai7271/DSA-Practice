@@ -240,13 +240,156 @@
 // list.travers();
 
 // NEW DAY.................
-//create node
+// //create node
+// function Node(value, next = null) {
+//   this.value = value;
+//   this.next = next;
+// }
+
+// // create linked list
+// function linkedList() {
+//   this.head = null;
+//   this.length = 0;
+// }
+
+// // add new node
+// linkedList.prototype.addItem = function (value) {
+//   let newNode = new Node(value);
+
+//   if (this.head === null) {
+//     this.head = newNode;
+//   } else {
+//     let currentNode = this.head;
+//     while (currentNode.next !== null) {
+//       currentNode = currentNode.next;
+//     }
+//     currentNode.next = newNode;
+//   }
+//   this.length++;
+// };
+
+// // add new node at head
+// linkedList.prototype.addItemAtHead = function (value) {
+//   let newNode = new Node(value);
+
+//   if (this.head === null) {
+//     this.head = newNode;
+//   } else {
+//     let currentNode = this.head;
+//     this.head = newNode;
+//     newNode.next = currentNode;
+//   }
+//   this.length++;
+// };
+
+// // add new node at given index
+// linkedList.prototype.addItemAtIndex = function (value, index) {
+//   if (index < 0 || index > this.length) return null;
+
+//   let newNode = new Node(value);
+
+//   // insert at head
+//   if (index === 0) {
+//     newNode.next = this.head;
+//     this.head = newNode;
+//     this.length++;
+//     return;
+//   }
+
+//   let count = 0;
+//   let current = this.head;
+//   let prevNode = null;
+//   while(count < index){
+//     prevNode = current;
+//     current = current.next;
+//     count++;
+//   }
+//   prevNode.next = newNode;
+//   newNode.next = current;
+//   this.length++;
+// };
+
+// // delete at head node
+// linkedList.prototype.deleteHeadItem = function (){
+//   if(this.head === null) return null;
+
+//   let currentNode = this.head;
+//   this.head = currentNode.next
+//   currentNode.next = null;
+//   this.length --;
+//   return currentNode.value;
+// }
+
+// // delete tail node
+// linkedList.prototype.deleteTailItem = function (){
+//   // case 1: empty list
+//   if(this.head === null){
+//     return null;
+//   }
+//   // case 2: only one node
+//   if(this.head.next === null){
+//     let deleteValue = this.head.value;
+//     this.head = null;
+//     this.length--;
+//     return deleteValue;
+//   }
+//   // case 3: more than one node
+//   let prevNode = null;
+//   let currentNode = this.head;
+//   while(currentNode.next !== null){
+//     prevNode = currentNode;
+//     currentNode = currentNode.next;
+//   }
+//   prevNode.next = null;
+//   this.length--;
+//   return currentNode.value;
+// }
+
+// // travers the linked list
+// linkedList.prototype.travers = function () {
+//   if (this.head === null) return null;
+
+//   let currentNode = this.head;
+//   while (currentNode !== null) {
+//     console.log(currentNode.value);
+//     currentNode = currentNode.next;
+//   }
+// };
+
+// let list = new linkedList();
+// list.addItem(10);
+// list.addItem(20);
+// list.addItem(30);
+// list.addItem(40);
+// list.addItem(50);
+// list.addItemAtHead(0);
+// list.addItemAtIndex(15,2);
+// console.log("Deleted Node is :", list.deleteHeadItem());
+// console.log("Deleted tail Node :",list.deleteTailItem());
+// list.travers();
+
+
+// These are the implements i want to perform:
+// 1- traverse throw node
+// 2- addItem in linked list last node
+// 3- addItem on head node
+// 4- addItem at given index
+// 5- delete head item node
+// 6- delete tail item node
+// 7- delete At given index
+// 8- update At given index
+// 9- update head node index
+// 10- update tail node
+
+
+// 🔹 NEW DAY TO COVER ALL BASIC OF LINKED LIST................
+// create node
 function Node(value, next = null) {
   this.value = value;
   this.next = next;
 }
 
-// create linked list
+// create new linked list
 function linkedList() {
   this.head = null;
   this.length = 0;
@@ -268,83 +411,116 @@ linkedList.prototype.addItem = function (value) {
   this.length++;
 };
 
-// add new node at head
+// Add new node at head
 linkedList.prototype.addItemAtHead = function (value) {
   let newNode = new Node(value);
 
   if (this.head === null) {
     this.head = newNode;
   } else {
-    let currentNode = this.head;
+    let tempNode = this.head;
     this.head = newNode;
-    newNode.next = currentNode;
+    newNode.next = tempNode;
   }
   this.length++;
 };
 
-// add new node at given index
+// Add new node at given index
 linkedList.prototype.addItemAtIndex = function (value, index) {
   if (index < 0 || index > this.length) return null;
 
   let newNode = new Node(value);
 
-  // insert at head
+  // if index is 0
   if (index === 0) {
-    newNode.next = this.head;
+    let currentNode = this.head;
     this.head = newNode;
+    newNode.next = currentNode;
     this.length++;
     return;
   }
 
+  // if index if not 0
   let count = 0;
-  let current = this.head;
-  let prevNode = null;
-  while(count < index){
-    prevNode = current;
-    current = current.next;
+  let currentNode = this.head;
+  let preNode = null;
+  while (count < index) {
+    preNode = currentNode;
+    currentNode = currentNode.next;
     count++;
   }
-  prevNode.next = newNode;
-  newNode.next = current;
+  preNode.next = newNode;
+  newNode.next = currentNode;
   this.length++;
 };
 
-// delete at head node
-linkedList.prototype.deleteHeadItem = function (){
-  if(this.head === null) return null;
+// delete head Item
+linkedList.prototype.deleteHeadItem = function () {
+  if (this.head === null) return null;
 
-  let currentNode = this.head;
-  this.head = currentNode.next
-  currentNode.next = null;
-  this.length --;
-  return currentNode.value;
-}
-
-// delete tail node
-linkedList.prototype.deleteTailItem = function (){
-  // case 1: empty list
-  if(this.head === null){
-    return null;
+  // if only one node than
+  if (this.head.next === null) {
+    this.head = null;
+    this.length--;
   }
-  // case 2: only one node
+
+  // more than one node
+  let currentNode = this.head;
+  this.head = currentNode.next;
+  currentNode.next = null;
+  this.length--;
+  return currentNode.value;
+};
+
+// delete tail item
+linkedList.prototype.deleteTailItem = function () {
+   // case 1: for empty linked list
+   if(this.head === null) return null;
+
+//   case 2: only one node
   if(this.head.next === null){
     let deleteValue = this.head.value;
     this.head = null;
     this.length--;
     return deleteValue;
   }
-  // case 3: more than one node
-  let prevNode = null;
-  let currentNode = this.head;
-  while(currentNode.next !== null){
-    prevNode = currentNode;
-    currentNode = currentNode.next;
-  }
-  prevNode.next = null;
-  this.length--;
-  return currentNode.value;
-}
 
+   // else handle and delete tail node
+   let currentNode = this.head;
+   let preNode = null;
+   while(currentNode.next !== null){
+    preNode = currentNode;
+    currentNode = currentNode.next;
+   }
+   preNode.next = null;
+   this.length--;
+   return currentNode.value;
+};
+
+// delete node at given index
+linkedList.prototype.deleteAtIndex = function (index){
+  if (typeof index !== "number") return null;
+    if (index < 0 || index >= this.length) return null;
+
+    if (index === 0) {
+        this.head = this.head.next;
+        this.length--;
+        return;
+    }
+
+    let currentNode = this.head;
+    let prevNode = null;
+    let count = 0;
+
+    while (count < index) {
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+        count++;
+    }
+
+    prevNode.next = currentNode.next;
+    this.length--;
+}
 
 // travers the linked list
 linkedList.prototype.travers = function () {
@@ -357,14 +533,15 @@ linkedList.prototype.travers = function () {
   }
 };
 
+
 let list = new linkedList();
 list.addItem(10);
 list.addItem(20);
 list.addItem(30);
 list.addItem(40);
-list.addItem(50);
 list.addItemAtHead(0);
-list.addItemAtIndex(15,2);
+list.addItemAtIndex(15, 2);
 console.log("Deleted Node is :", list.deleteHeadItem());
-console.log("Deleted tail Node :",list.deleteTailItem());
+console.log("Deleted tail Node :", list.deleteTailItem());
+list.deleteAtIndex(2);
 list.travers();
