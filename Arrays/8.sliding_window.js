@@ -75,16 +75,61 @@
 
 // let arr = [2,1,5,1,3,2], k=3;
 
-
-// function findAvgSubArray (arr,k){
+// function findAvgSubArray(arr, k) {
 //     if (!Array.isArray(arr) || k <= 0 || k > arr.length) return null;
     
 //     let windowSum = 0;
 //     let resultArray = [];
 
-//     for(let i=0; i<k; i++){
-//         windowSum = windowSum + arr[i];
+//     // first window
+//     for (let i = 0; i < k; i++) {
+//         windowSum += arr[i];
 //     }
-//     resultArray.push(windowSum/k);
 
+//     resultArray.push(Number((windowSum / k).toFixed(2))); // ✅ FIX
+
+//     // sliding window
+//     for (let i = k; i < arr.length; i++) {
+//         windowSum = windowSum - arr[i - k] + arr[i];
+//         resultArray.push(Number((windowSum / k).toFixed(2)));
+//     }
+     
+//     return resultArray;
 // }
+
+// console.log(findAvgSubArray(arr,k));
+
+
+// 🧩 Question 4
+
+// Given an array and k,
+// find the maximum number in each subarray of size k
+
+// Example:
+// Input: [2,1,5,1,3,2], k = 3
+// Output: [5,5,5,3]
+
+let arr = [2,1,5,1,3,2], k = 3
+
+function maxInSubarrays(arr, k) {
+    if (!Array.isArray(arr) || k <= 0 || k > arr.length) return null;
+
+    let result = [];
+
+    for (let i = 0; i <= arr.length - k; i++) {
+        let max = arr[i];
+
+        for (let j = i; j < i + k; j++) {
+            if (arr[j] > max) {
+                max = arr[j];
+            }
+        }
+
+        result.push(max);
+    }
+
+    return result;
+}
+
+console.log(maxInSubarrays(arr,k));
+
