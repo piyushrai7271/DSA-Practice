@@ -109,27 +109,27 @@
 // Input: [2,1,5,1,3,2], k = 3
 // Output: [5,5,5,3]
 
-let arr = [2,1,5,1,3,2], k = 3
+// let arr = [2,1,5,1,3,2], k = 3
 
-function maxInSubarrays(arr, k) {
-    if (!Array.isArray(arr) || k <= 0 || k > arr.length) return null;
+// function maxInSubarrays(arr, k) {
+//     if (!Array.isArray(arr) || k <= 0 || k > arr.length) return null;
 
-    let result = [];
+//     let result = [];
 
-    for (let i = 0; i <= arr.length - k; i++) {
-        let max = arr[i];
+//     for (let i = 0; i <= arr.length - k; i++) {
+//         let max = arr[i];
 
-        for (let j = i; j < i + k; j++) {
-            if (arr[j] > max) {
-                max = arr[j];
-            }
-        }
+//         for (let j = i; j < i + k; j++) {
+//             if (arr[j] > max) {
+//                 max = arr[j];
+//             }
+//         }
 
-        result.push(max);
-    }
+//         result.push(max);
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
-console.log(maxInSubarrays(arr,k));
+// console.log(maxInSubarrays(arr,k));
 

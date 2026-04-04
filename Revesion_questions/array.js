@@ -482,3 +482,91 @@
 
 // console.log("k:", k);
 // console.log("Updated array:", arr);
+
+
+// Given an array of integers, find the first repeating element.
+// Return the element (not index).
+// If no repeating element exists, return -1.
+
+// 🔍 Example:
+// Input: [5, 3, 4, 3, 5, 6]
+// Output: 3
+
+// let arr = [5,3,4,3,5,6];
+
+// function firstRepeatingElement (arr){
+
+//     if(!Array.isArray(arr)) return -1;
+
+//     for(let i=0; i<arr.length; i++){
+//         let value = arr[i];
+//         for(let j=i+1; j<arr.length; j++){
+//             if(arr[j] === value){
+//                 return value;
+//             }
+//         }
+//     }
+//     return -1;
+// }
+
+// function firstRepeatingElement(arr) {
+//     if (!Array.isArray(arr)) return -1;
+
+//     let minIndex = arr.length;
+//     let result = -1;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] === arr[j]) {
+//                 if (j < minIndex) {
+//                     minIndex = j;
+//                     result = arr[i];
+//                 }
+//                 break; // no need to check further
+//             }
+//         }
+//     }
+
+//     return result;
+// }
+
+// console.log("First repeting element Index :",firstRepeatingElement(arr));
+
+
+// Given a sorted array, remove duplicates such that each element appears only once,
+// and return the new length.
+
+// 🔍 Example:
+// Input: [1,1,2,2,3,4,4]
+// Output: 4
+
+// Modified array: [1,2,3,4,...]
+
+// let arr = [1,1,2,2,3,4,4];
+
+// let slow = 0;
+
+// for(let fast = 1; fast <arr.length ; fast++){
+//     if(arr[fast] !== arr[slow]){
+//         slow++;
+//         arr[slow] = arr[fast];
+//     }
+// }
+// console.log(arr.slice(0,slow+1));
+
+// function removeDuplicates(arr) {
+//     if (!Array.isArray(arr) || arr.length === 0) return 0;
+
+//     let slow = 0;
+
+//     for (let fast = 1; fast < arr.length; fast++) {
+//         if (arr[fast] !== arr[slow]) {
+//             slow++;
+//             arr[slow] = arr[fast];
+//         }
+//     }
+
+//     return slow + 1;
+// }
+
+// console.log(removeDuplicates([1,1,2,2,3,4,4]));
