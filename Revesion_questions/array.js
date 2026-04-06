@@ -364,7 +364,6 @@
 
 // console.log("Is this string is palindrom :",isPalindrom(str));
 
-
 // New Day.............
 
 // 🧠 Question: Two Sum (Sorted Array)
@@ -412,8 +411,6 @@
 
 // console.log(twoSum(arr,6));
 
-
-
 // Remove duplicates from sorted array (in-place)
 
 // Example:
@@ -450,8 +447,6 @@
 // console.log("k:", k);
 // console.log("Updated array:", arr);
 
-
-
 // Remove all occurrences of a given value in-place
 // Example:
 // Input: arr = [3,2,2,3]
@@ -482,7 +477,6 @@
 
 // console.log("k:", k);
 // console.log("Updated array:", arr);
-
 
 // Given an array of integers, find the first repeating element.
 // Return the element (not index).
@@ -532,7 +526,6 @@
 
 // console.log("First repeting element Index :",firstRepeatingElement(arr));
 
-
 // Given a sorted array, remove duplicates such that each element appears only once,
 // and return the new length.
 
@@ -570,3 +563,100 @@
 // }
 
 // console.log(removeDuplicates([1,1,2,2,3,4,4]));
+
+// Given an array of integers, find the majority element.
+// The majority element is the element that appears more than n/2 times.
+// If no such element exists, return -1.
+
+// 🔍 Example:
+// Input: [2,2,1,1,2,2,2]
+// Output: 2
+
+// let arr = [1,2,3,4,5];
+
+// function majorityElement(arr) {
+//     if (!Array.isArray(arr)) return -1;
+
+//     let maxOccurance = 0;
+//     let maxElement = -1;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let count = 0;
+//         let value = arr[i];
+
+//         for (let j = 0; j < arr.length; j++) {
+//             if (value === arr[j]) {
+//                 count++;
+//             }
+//         }
+
+//         if (count > maxOccurance) {
+//             maxOccurance = count;
+//             maxElement = value;
+//         }
+//     }
+
+//     // ✅ Important check
+//     if (maxOccurance > Math.floor(arr.length / 2)) {
+//         return maxElement;
+//     }
+
+//     return -1;
+// }
+
+// console.log(majorityElement(arr));
+
+// 🧠 Two Pointer – Interview Question
+
+// Given a sorted array, find if there exists a pair of elements whose difference is equal to a given target.
+
+// 🔍 Example:
+// Input: arr = [1, 3, 5, 8, 12], target = 7
+// Output: true   // (8 - 1 = 7)
+// Input: arr = [1, 2, 3, 4], target = 10
+// Output: false
+
+// let arr = [1, 3, 5, 8, 12];
+// let target = 7;
+
+// function isPairExists(arr, target) {
+//     if (!Array.isArray(arr) || target < 0) return false;
+
+//     let i = 0;
+//     let j = 1;
+
+//     while (j < arr.length) {
+//         let diff = arr[j] - arr[i];
+
+//         if (diff === target) {
+//             return true;
+//         } else if (diff < target) {
+//             j++;
+//         } else {
+//             i++;
+//         }
+
+//         // ensure i < j
+//         if (i === j) {
+//             j++;
+//         }
+//     }
+
+//     return false;
+// }
+
+// console.log(isPairExists(arr,target));
+
+
+// 🧠 Two Pointer – Interview Question (Next)
+
+// Given a sorted array, remove duplicates such that each element appears at most twice,
+// and return the new length.
+
+// 🔍 Example:
+// Input: [1,1,1,2,2,3]
+// Output: 5
+
+// Modified array: [1,1,2,2,3,...]
+
+
