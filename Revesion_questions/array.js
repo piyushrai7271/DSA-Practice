@@ -659,4 +659,141 @@
 
 // Modified array: [1,1,2,2,3,...]
 
+// function removeDuplicates(arr) {
+//     if (!Array.isArray(arr)) return 0;
+//     if (arr.length <= 2) return arr.length;
+
+//     let slow = 2;
+
+//     for (let fast = 2; fast < arr.length; fast++) {
+//         if (arr[fast] !== arr[slow - 2]) {
+//             arr[slow] = arr[fast];
+//             slow++;
+//         }
+//     }
+
+//     return slow;
+// }
+
+// console.log(removeDuplicates([1,1,1,2,2,3]))
+
+// 🧠 Two Pointer – Easy (Foundation Builder)
+
+// Given a sorted array, find a pair whose sum is equal to target
+// Return their indices [i, j] or false if not found.
+
+// 🔍 Example:
+// Input: arr = [1,2,4,6,10], target = 8  
+// Output: [1,3]   // (2 + 6 = 8)
+
+// function findPair (arr,target) {
+//     if(!Array.isArray(arr)) return false;
+
+//     let i = 0;
+//     let j = arr.length-1;
+//     while(i<j){
+//         if(arr[i] + arr[j] > target){
+//             j--;
+//         } else if( arr[i] + arr[j] < target){
+//             i++;
+//         }else {
+//             return [i,j];
+//         }
+//     }
+//     return false;
+// }
+
+// console.log(findPair([1,2,4,6,10],8));
+
+
+// 🧩 Question
+
+// Given a sorted array, find all pairs whose sum = target
+
+// Example:
+// Input: [1,2,3,4,5,6], target = 7  
+// Output: [[1,6],[2,5],[3,4]]
+
+// let arr = [1,2,3,4,5,6], target = 7;
+// let resultArray = [];
+
+// let i = 0;
+// let j = arr.length-1;
+// while(i<j){
+//     let sum = arr[i] + arr[j];
+//     if(sum < target){
+//          i++;
+//     } else if (sum > target){
+//         j--;
+//     } else{
+//       resultArray.push([arr[i],arr[j]]);
+//       i++,j--;
+//     }
+// }
+// console.log(resultArray);
+
+
+// 🧠 Correction
+// ✅ Correct Problem (No confusion)
+
+// Given an array (not necessarily sorted), remove all occurrences of target in-place and return new length.
+
+// 🔍 Correct Examples
+// Input: [1,2,3,4,5,6], target = 4  
+// Output: 5  
+// Array: [1,2,3,5,6,...]
+// Input: [2,2,3,4,2,5], target = 2  
+// Output: 3  
+// Array: [3,4,5,...]
+
+// let arr = [2,2,3,4,2,5], target = 2;
+// let slow = 0
+
+// for(let i=0; i<arr.length; i++){
+//    if(arr[i] !== target){
+//       arr[slow] = arr[i];
+//       slow++
+//    }
+// }
+
+// console.log(slow);
+
+
+// 🚀 Next (Final Two Pointer – Foundation Complete)
+// 🧩 Question
+
+// Given a sorted array, check if it is a palindrome.
+
+// Example:
+// [1,2,3,2,1] → true  
+// [1,2,3,4] → false
+
+// let arr = [1,2,3,2,1]
+
+// function isPalindrom (arr){
+//     if(!Array.isArray(arr)) return false;
+
+//     for(let i=0, j=arr.length-1; i<j; i++,j--){
+//         if(arr[i] !== arr[j]){
+//             return false;
+//         }
+//     }
+
+//     return true;
+// }
+
+// console.log(isPalindrom(arr));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
