@@ -78,3 +78,66 @@
 //          j++;
 //     }
 // }
+
+// 🧠 Two Pointer – Revision Question 1
+
+// Given a sorted array, check if there exists a pair whose sum is closest to a given target.
+// Return the pair.
+
+// 🔍 Example:
+// Input: arr = [1,3,4,7,10], target = 15  
+// Output: [4,10]   // sum = 14 (closest to 15)
+
+// function closestPair(arr, target) {
+//     if (!Array.isArray(arr) || arr.length < 2) return [];
+
+//     let i = 0;
+//     let j = arr.length - 1;
+
+//     let closestDiff = Infinity;
+//     let result = [];
+
+//     while (i < j) {
+//         let sum = arr[i] + arr[j];
+//         let diff = Math.abs(target - sum);
+
+//         if (diff < closestDiff) {
+//             closestDiff = diff;
+//             result = [arr[i], arr[j]];
+//         }
+
+//         if (sum < target) {
+//             i++;
+//         } else {
+//             j--;
+//         }
+//     }
+
+//     return result;
+// }
+
+// // Example
+// console.log(closestPair([1,3,4,7,10], 15));
+
+
+// 🧠 Two Pointer – Revision Question 2
+
+// Given a sorted array, remove all duplicates in-place and return the new length.
+
+// 🔍 Example:
+// Input: [1,1,2,2,3,4,4]  
+// Output: 4  
+
+// Modified array: [1,2,3,4,...]
+
+// let arr = [1,1,2,2,3,4,4];
+// let slow = 0;
+
+// for(let fast = 1; fast<arr.length; fast++){
+//     if(arr[fast] !== arr[slow]){
+//         slow++;
+//         arr[slow] = arr[fast];
+//     }
+// }
+// console.log(arr.slice(0,slow+1));
+// console.log(slow + 1);

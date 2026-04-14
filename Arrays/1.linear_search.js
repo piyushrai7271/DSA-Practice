@@ -5,7 +5,7 @@
 // let element = 10;
 
 // const searchElement = function (arr){
-   
+
 //     for(let i=0; i<arr.length; i++){
 //         if(arr[i] === element){
 //             return i;
@@ -21,7 +21,7 @@
 // let arr = [1,2,3,4,5,6,1,2,3,4,5,10,2,3];
 
 // const elementfrequency = function (arr) {
-   
+
 //     let myObject = {};
 
 //     for(let i=0; i<arr.length; i++){
@@ -79,7 +79,7 @@
 // let lastOccutance = null;
 
 // const findFirst_lastOccurance = function (arr,target){
-   
+
 //     if(arr[i] === target && firstOccurance !== null){
 //         firstOccurance = i;
 //         lastOccutance = i;
@@ -174,7 +174,7 @@
 //              preIndexSum += arr[i-1];
 //         }
 //         for(let j= i+1; j<arr.length; j++){
-            
+
 //             afterIndexSum += arr[j];
 //         }
 //         if(preIndexSum === afterIndexSum){
@@ -237,4 +237,34 @@
 
 // console.log(minSubArrayLength(arr, target));
 
+// 🧠 Linear Search – Revision Question
 
+// Given an array of integers, find the first non-repeating element.
+// Return the element. If none exists, return -1.
+
+// 🔍 Example:
+// Input: [4,5,1,2,0,4]
+// Output: 5
+
+// let arr = [4, 5, 1, 2, 0, 4];
+
+// function nonRepeating(arr) {
+//   if(!Array.isArray(arr)) return -1;
+
+//   for(let i=0; i<arr.length; i++){
+//     let isRepeting = false;
+
+//     for(let j= i+1; j<arr.length ; j++){
+//        if(arr[j] === arr[i]){
+//          isRepeting=true;
+//          break;
+//        }
+//     }
+//     if(isRepeting === false){
+//         return arr[i];
+//     }
+//   }
+//   return -1
+// }
+
+// console.log(nonRepeating(arr));
