@@ -30,14 +30,13 @@
 
 // console.log("Max sum is :",maxSum);
 
-
 // 🧩 Question 2
 
 // Given an array and k,
 // find the minimum sum of subarray of size k
 
 // Example:
-// Input: [2, 1, 5, 1, 3, 2], k = 3  
+// Input: [2, 1, 5, 1, 3, 2], k = 3
 // Output: 6   // [1,3,2]
 
 // let arr = [2,1,5,1,3,2], k=3;
@@ -63,7 +62,6 @@
 
 // console.log("Min sub array sum is :",findMinimumSum(arr,k));
 
-
 // 🧩 Question 3
 
 // Given an array and k,
@@ -77,7 +75,7 @@
 
 // function findAvgSubArray(arr, k) {
 //     if (!Array.isArray(arr) || k <= 0 || k > arr.length) return null;
-    
+
 //     let windowSum = 0;
 //     let resultArray = [];
 
@@ -93,12 +91,11 @@
 //         windowSum = windowSum - arr[i - k] + arr[i];
 //         resultArray.push(Number((windowSum / k).toFixed(2)));
 //     }
-     
+
 //     return resultArray;
 // }
 
 // console.log(findAvgSubArray(arr,k));
-
 
 // 🧩 Question 4
 
@@ -139,7 +136,7 @@
 // find the maximum sum of any subarray of size k
 
 // 🔍 Example:
-// Input: arr = [2,1,5,1,3,2], k = 3  
+// Input: arr = [2,1,5,1,3,2], k = 3
 // Output: 9
 
 // let arr = [2,1,5,1,3,2], k = 3;
@@ -163,14 +160,13 @@
 
 // console.log(maxSum);
 
-
 // 🧠 Sliding Window – Level 0 (Next)
 
 // Given an array of integers and a number k,
 // find the minimum sum of any subarray of size k
 
 // 🔍 Example:
-// Input: arr = [2,1,5,1,3,2], k = 3  
+// Input: arr = [2,1,5,1,3,2], k = 3
 // Output: 6   // [1,3,2]
 
 // let arr = [2,1,5,1,3,2], k=3;
@@ -191,17 +187,16 @@
 
 // console.log(minSum)
 
-
 // 🧠 Corrected Question
 
 // Given an array of integers (can be positive or negative) and a number k,
 // find the maximum average of any subarray of size k
 
 // 🔍 Example:
-// Input: arr = [1,12,-5,-6,50,3], k = 4  
+// Input: arr = [1,12,-5,-6,50,3], k = 4
 // Output: 12.75
 
-// let arr = [1,12,-5,-6,50,3], k = 4 
+// let arr = [1,12,-5,-6,50,3], k = 4
 // let windowSum = 0;
 
 // for(let i=0; i<k; i++){
@@ -220,17 +215,79 @@
 
 // console.log(maxAvg);
 
-
 // 🧠 Sliding Window – Level 0 (Revision)
 
 // Given an array of integers and a number k,
 // find the average of all subarrays of size k and return them as an array.
 
 // 🔍 Example:
-// Input: arr = [1,3,2,6,-1,4,1,8,2], k = 5  
+// Input: arr = [1,3,2,6,-1,4,1,8,2], k = 5
 // Output: [2.2, 2.8, 2.4, 3.6, 2.8]
 
-let arr = [1,3,2,6,-1,4,1,8,2], k=5;
-let avgArray = [];
-let windowSum = 0;
+// let arr = [1, 3, 2, 6, -1, 4, 1, 8, 2], k = 5;
+// let avgArray = [];
+// let windowSum = 0;
 
+// for (let i = 0; i < k; i++) {
+//   windowSum = windowSum + arr[i];
+// }
+
+// avgArray.push(windowSum / k);
+
+// for (let i = k; i < arr.length; i++) {
+//   windowSum = windowSum - arr[i - k] + arr[i];
+//   avgArray.push(windowSum/k)
+// }
+// console.log(avgArray)
+
+
+
+// 🧠 Sliding Window Question
+
+// Given an array of integers and a number k,
+// find the maximum number of elements greater than 0 in any subarray of size k
+
+// 🔍 Correct Example:
+// Input: arr = [1,1,1,0,1,0,1], k = 3  
+// Output: 3
+
+// let arr = [1,0,1,1,0,1,0,1];
+// let k = 3;
+
+// function maxOnes(arr, k) {
+//     if (!Array.isArray(arr) || k <= 0 || k > arr.length) return 0;
+
+//     let currentCount = 0;
+
+//     // first window
+//     for (let i = 0; i < k; i++) {
+//         if (arr[i] > 0) {
+//             currentCount++;
+//         }
+//     }
+
+//     let maxCount = currentCount;
+
+//     // sliding window
+//     for (let i = k; i < arr.length; i++) {
+
+//         // remove element going out
+//         if (arr[i - k] > 0) {
+//             currentCount--;
+//         }
+
+//         // add new element
+//         if (arr[i] > 0) {
+//             currentCount++;
+//         }
+
+//         // update max
+//         if (currentCount > maxCount) {
+//             maxCount = currentCount;
+//         }
+//     }
+
+//     return maxCount;
+// }
+
+// console.log(maxOnes(arr, k));
