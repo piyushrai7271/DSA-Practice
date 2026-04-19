@@ -291,3 +291,82 @@
 // }
 
 // console.log(maxOnes(arr, k));
+
+
+// 🧠 Sliding Window – Easy
+
+// Given an array of integers and a number k,
+// find the maximum sum of any subarray of size k.
+
+// 🔍 Example:
+// Input: arr = [4,2,1,7,8,1,2,8,1,0], k = 3  
+// Output: 16
+
+// let arr = [4,2,1,7,8,1,2,8,1,0], k=3;
+
+// let windowSum = 0;
+
+// // first window
+// for(let i=0; i<k; i++){
+//    windowSum += arr[i];
+// }
+
+// let maxSum = windowSum;
+
+// // sliding window
+// for(let i=k; i < arr.length; i++){
+//     windowSum = windowSum - arr[i-k] + arr[i];
+
+//     if(windowSum > maxSum){
+//         maxSum = windowSum;
+//     }
+// }
+
+// console.log(maxSum);
+
+
+// 🧠 Sliding Window – Level 1 (Easy → Slightly Different)
+
+// Given an array of positive integers and a number k,
+// find the maximum number of odd numbers in any subarray of size k.
+
+// 🔍 Example:
+// Input: arr = [2,1,3,4,5,6,7,8], k = 3  
+// Output: 2
+
+// let arr = [2,1,3,4,5,6,7,8], k = 3;
+
+// function maxOddCount(arr, k) {
+//     let currentCount = 0;
+
+//     // first window
+//     for (let i = 0; i < k; i++) {
+//         if (arr[i] % 2 !== 0) {
+//             currentCount++;
+//         }
+//     }
+
+//     let maxCount = currentCount;
+
+//     // sliding window
+//     for (let i = k; i < arr.length; i++) {
+
+//         // remove outgoing
+//         if (arr[i - k] % 2 !== 0) {
+//             currentCount--;
+//         }
+
+//         // add incoming
+//         if (arr[i] % 2 !== 0) {
+//             currentCount++;
+//         }
+
+//         if (currentCount > maxCount) {
+//             maxCount = currentCount;
+//         }
+//     }
+
+//     return maxCount;
+// }
+
+// console.log(maxOddCount(arr, k));

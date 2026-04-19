@@ -141,3 +141,135 @@
 // }
 // console.log(arr.slice(0,slow+1));
 // console.log(slow + 1);
+
+
+// 🧠 Two Pointer – Next Level (Still Interview Friendly)
+
+// Given a sorted array, remove duplicates such that each element can appear at most 2 times.
+// Return the new length.
+
+// 🔍 Example:
+// Input: [1,1,1,2,2,3]  
+// Output: 5  
+
+// Modified array: [1,1,2,2,3,...]
+
+// let arr = [1,1,1,2,2,3];
+
+// function removeDuplicates (arr){
+//     if(!Array.isArray(arr)) return null;
+
+//     if(arr.length < 2) return null;
+
+//     let slow = 2;
+//     for(let fast = 2; fast < arr.length; fast++){
+//         if(arr[fast] !== arr[slow-2]){
+//             arr[slow] = arr[fast];
+//             slow++;
+//         }
+//     }
+//     return slow;
+// }
+// console.log(removeDuplicates(arr));
+
+
+// 🧠 Two Pointer – Interview Level (Your Level)
+
+// Given a sorted array, check if there exists a pair such that the difference between them is equal to a target.
+// Return true or false.
+
+// 🔍 Example:
+// Input: arr = [1,3,5,8,12], target = 7  
+// Output: true   // (8 - 1 = 7)
+
+// function diffSumTarget(arr, target) {
+//     if (!Array.isArray(arr)) return false;
+
+//     let i = 0;
+//     let j = arr.length - 1;
+
+//     while (i < j) {
+//         let diff = arr[j] - arr[i];
+
+//         if (diff === target) {
+//             return true;
+//         } else if (diff > target) {
+//             j--;
+//         } else {
+//             i++;
+//         }
+//     }
+
+//     return false;
+// }
+
+// console.log(diffSumTarget([1,3,5,8,12], 7));
+
+
+
+// 🧠 Two Pointer Question
+
+// Given a sorted array, count how many unique pairs have sum less than a target.
+
+// 🔍 Example:
+// Input: arr = [1,2,3,4,5], target = 7  
+// Output: 6
+
+// brute force...
+// let arr = [1,2,3,4,5], target = 7;
+// let uniqueCount = 0;
+
+// for(let i=0; i<arr.length; i++){
+
+//     for(let j=i+1; j<arr.length; j++){
+//         if(arr[i] + arr[j] < target){
+//             uniqueCount++;
+//         }
+//     }
+// }
+
+// console.log(uniqueCount);
+
+// let arr = [1,2,3,4,5], target = 7;
+// let uniqueCount = 0;
+
+// let i = 0;
+// let j = arr.length - 1;
+
+// while (i < j) {
+//     if (arr[i] + arr[j] < target) {
+//         uniqueCount += (j - i); // ✅ fix
+//         i++;
+//     } else {
+//         j--;
+//     }
+// }
+
+// console.log(uniqueCount);
+
+// 🧠 Two Pointer Question
+
+// Given a sorted array, remove all occurrences of a given target in-place and return the new length.
+
+// 🔍 Example:
+// Input: arr = [1,2,3,2,4,2,5], target = 2  
+// Output: 4  
+
+// Modified array: [1,3,4,5,...]
+
+function removeElement(nums, target) {
+    let k = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== target) {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+
+    return k;
+}
+
+let arr = [1,2,3,2,4,2,5], target=2;
+
+console.log(removeElement(arr,target))
