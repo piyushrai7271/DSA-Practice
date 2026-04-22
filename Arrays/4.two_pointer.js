@@ -257,19 +257,99 @@
 
 // Modified array: [1,3,4,5,...]
 
-function removeElement(nums, target) {
-    let k = 0;
+// function removeElement(nums, target) {
+//     let k = 0;
 
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] !== target) {
-            nums[k] = nums[i];
-            k++;
-        }
-    }
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] !== target) {
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
 
-    return k;
-}
+//     return k;
+// }
 
-let arr = [1,2,3,2,4,2,5], target=2;
+// let arr = [1,2,3,2,4,2,5], target=2;
 
-console.log(removeElement(arr,target))
+// console.log(removeElement(arr,target))
+
+
+// 🧠 Two Pointer Question
+
+// Given a sorted array, find the pair whose sum is closest to a target.
+// Return that pair.
+
+// 🔍 Example:
+// Input: arr = [1,3,4,7,10], target = 15  
+// Output: [4,10]   // sum = 14 (closest)
+
+// let arr = [1,3,4,7,10], target = 15;
+
+// function diffSumTarget(arr, target) {
+//     if (!Array.isArray(arr)) return false;
+
+//     let i = 0;
+//     let j = arr.length - 1;
+
+//     while (i < j) {
+//         let diff = arr[j] - arr[i];
+
+//         if (diff === target) {
+//             return true;
+//         } else if (diff > target) {
+//             j--;
+//         } else {
+//             i++;
+//         }
+//     }
+
+//     return false;
+// }
+
+// console.log(diffSumTarget([1,3,5,8,12], 7));
+
+// 🧠 Two Pointer Question
+
+// Given a sorted array, find the pair whose sum is closest to a target.
+// Return that pair.
+
+// 🔍 Example:
+// Input: arr = [1,3,4,7,10], target = 15  
+// Output: [4,10]   // sum = 14 (closest)
+
+// let arr = [1,3,4,7,10], target = 15;
+
+// function findPair(arr, target) {
+//     if (!Array.isArray(arr)) return null;
+
+//     let i = 0;
+//     let j = arr.length - 1;
+
+//     let closestDiff = Infinity;
+//     let result = [];
+
+//     while (i < j) {
+//         let sum = arr[i] + arr[j];
+//         let diff = Math.abs(target - sum);
+
+//         // update closest
+//         if (diff < closestDiff) {
+//             closestDiff = diff;
+//             result = [arr[i], arr[j]];
+//         }
+
+//         if (sum === target) {
+//             return result;
+//         } else if (sum > target) {
+//             j--;
+//         } else {
+//             i++;
+//         }
+//     }
+
+//     return result;
+// }
+
+// findPair(arr,target);
+

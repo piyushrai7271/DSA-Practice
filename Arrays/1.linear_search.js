@@ -268,3 +268,84 @@
 // }
 
 // console.log(nonRepeating(arr));
+
+
+// 🧠 Linear Search – Next Question
+
+// Given an array, find the majority element.
+// A majority element is one that appears more than n/2 times.
+// If no such element exists, return -1.
+
+// 🔍 Example:
+// Input: [2,2,1,1,2,2,2]
+// Output: 2
+
+// let arr = [2,2,1,1,2,2,2];
+
+// function majorityElement(arr) {
+//     if (!Array.isArray(arr)) return -1;
+
+//     let maxOccurance = 0;
+//     let maxElement = -1;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let count = 0;
+//         let value = arr[i];
+
+//         for (let j = 0; j < arr.length; j++) {
+//             if (value === arr[j]) {
+//                 count++;
+//             }
+//         }
+
+//         if (count > maxOccurance) {
+//             maxOccurance = count;
+//             maxElement = value;
+//         }
+//     }
+
+//     // ✅ Important check
+//     if (maxOccurance > Math.floor(arr.length / 2)) {
+//         return maxElement;
+//     }
+
+//     return -1;
+// }
+
+// console.log(majorityElement(arr));
+
+
+
+// updated version with O(n)
+// function majorityElement(arr) {
+//     if (!Array.isArray(arr) || arr.length === 0) return -1;
+
+//     let candidate = null;
+//     let count = 0;
+
+//     // Step 1: Find candidate
+//     for (let i = 0; i < arr.length; i++) {
+//         if (count === 0) {
+//             candidate = arr[i];
+//         }
+
+//         if (arr[i] === candidate) {
+//             count++;
+//         } else {
+//             count--;
+//         }
+//     }
+
+//     // Step 2: Verify candidate
+//     count = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === candidate) {
+//             count++;
+//         }
+//     }
+
+//     return count > Math.floor(arr.length / 2) ? candidate : -1;
+// }
+
+// // Example
+// console.log(majorityElement([2,2,1,1,2,2,2]));

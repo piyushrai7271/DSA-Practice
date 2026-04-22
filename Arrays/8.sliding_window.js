@@ -370,3 +370,80 @@
 // }
 
 // console.log(maxOddCount(arr, k));
+
+
+// // Given an array and a number k,
+// // find the sum of every subarray of size k.
+// // Return all sums in an array.
+
+// // 🔍 Example:
+// // Input: arr = [2,1,5,1,3,2], k = 3  
+// // Output: [8,7,9,6]
+
+// let arr = [2,1,5,1,3,2], k = 3;
+
+// function findSubArraySum(arr, k) {
+//     if (!Array.isArray(arr) || k <= 0 || k > arr.length) return null;
+
+//     let windowSum = 0;
+//     let result = [];
+
+//     // first window
+//     for (let i = 0; i < k; i++) {
+//         windowSum += arr[i];
+//     }
+
+//     result.push(windowSum);
+
+//     // sliding window
+//     for (let i = k; i < arr.length; i++) {
+//         windowSum = windowSum - arr[i - k] + arr[i];
+//         result.push(windowSum);
+//     }
+
+//     return result;
+// }
+
+// console.log(findSubArraySum(arr, k));
+
+// 🧠 Sliding Window – Level 1
+
+// Given an array of positive integers and a number k,
+// find the maximum number of even numbers in any subarray of size k.
+
+// 🔍 Example:
+// Input: arr = [1,2,4,3,6,8,1,2], k = 3  
+// Output: 3
+
+// let arr = [1,2,4,3,6,8,1,2], k = 3;
+
+// let currentCount = 0;
+
+// // first window
+// for (let i = 0; i < k; i++) {
+//     if (arr[i] % 2 === 0) {
+//         currentCount++;
+//     }
+// }
+
+// let maxCount = currentCount;
+
+// // sliding window
+// for (let i = k; i < arr.length; i++) {
+
+//     // remove outgoing
+//     if (arr[i - k] % 2 === 0) {
+//         currentCount--;
+//     }
+
+//     // add incoming
+//     if (arr[i] % 2 === 0) {
+//         currentCount++;
+//     }
+
+//     if (currentCount > maxCount) {
+//         maxCount = currentCount;
+//     }
+// }
+
+// console.log(maxCount);
