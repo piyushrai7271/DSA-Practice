@@ -349,3 +349,107 @@
 
 // // Example
 // console.log(majorityElement([2,2,1,1,2,2,2]));
+
+// 🧠 Problem
+
+// Given an array, find the second largest element.
+// If it doesn’t exist, return -1.
+
+// 🔍 Example:
+// Input: [5,1,4,2,3]
+// Output: 4
+
+// let arr = [5,1,4,2,3]
+
+// function findSecondLargest (arr){
+//     if(!Array.isArray(arr) || arr.length < 2) return -1;
+
+//     let firstLargestNum = -Infinity;
+//     let secondLargestNum = -Infinity;
+
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i] > firstLargestNum){
+//             secondLargestNum = firstLargestNum;
+//             firstLargestNum = arr[i];
+//         } else if(arr[i] > secondLargestNum && arr[i] < firstLargestNum){
+//             secondLargestNum = arr[i];
+//         }
+//     }
+
+//     return (secondLargestNum > -Infinity)? secondLargestNum : -1;
+// }
+
+// console.log(findSecondLargest(arr));
+
+
+// 🧠 What you should think instead
+
+// 👉 “I need to find the smallest positive number that is missing”
+
+// 🔍 Example thinking
+// [3,4,-1,1]
+
+// let arr = [3,4,-1,1];
+
+// function firstSmallestMissingNumber(arr) {
+//     if (!Array.isArray(arr)) return null;
+
+//     let n = arr.length;
+
+//     // check from 1 to n+1
+//     for (let num = 1; num <= n + 1; num++) {
+
+//         let found = false;
+
+//         for (let i = 0; i < n; i++) {
+//             if (arr[i] === num) {
+//                 found = true;
+//                 break;
+//             }
+//         }
+
+//         if (!found) {
+//             return num;
+//         }
+//     }
+// }
+
+// console.log(firstSmallestMissingNumber([3,4,-1,1]));
+
+
+
+// 🧠 Linear Search Question
+
+// Given an array, find the equilibrium index.
+// An index is equilibrium if:
+
+// 👉 sum of elements left side = right side
+
+// 🔍 Example:
+// Input: [1,3,5,2,2]
+// Output: 2
+
+// let arr = [1,3,5,2,2];
+
+// function findEquilibriumIndex (arr){
+//    if(!Array.isArray(arr)) return -1;
+
+//    for(let i=0; i<arr.length; i++){
+//     let leftSum = 0;
+//     let rightSum = 0;
+
+//     for(let j=0; j<arr.length; j++){
+//         if(j<i){
+//             leftSum = leftSum + arr[j];
+//         } else if (j>i){
+//             rightSum = rightSum + arr[j];
+//         }
+//     }
+//     if(leftSum === rightSum){
+//         return i;
+//     }
+//    }
+//    return -1;
+// }
+
+// console.log(findEquilibriumIndex(arr));

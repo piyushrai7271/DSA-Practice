@@ -447,3 +447,20 @@
 // }
 
 // console.log(maxCount);
+
+// 🧠 Sliding Window Question (Level Up)
+
+// Given an array of positive integers, find the smallest length of a contiguous subarray whose sum is greater than or equal to a target.
+// If no such subarray exists, return 0.
+
+// 🔍 Example:
+// Input: arr = [2,1,5,2,3,2], target = 7  
+// Output: 2
+
+
+function smallestSubArray (arr, target) {
+   if(!Array.isArray(arr)) return 0
+}
+
+let arr = [2,1,5,2,3,2], target = 7;
+console.log(smallestSubArray(arr,target));

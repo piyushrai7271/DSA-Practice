@@ -30,7 +30,6 @@
 // Given a sorted array, find two numbers such that their sum is equal to a given target.
 //Return the indices of those two numbers.
 
-
 // let arr = [1, 2, 3, 4, 6, 8, 9]
 // let target = 10
 
@@ -46,7 +45,7 @@
 // }
 // console.log(findtargetedSumIndexes(arr,target));
 // // this apporach takes O(n*n)
- 
+
 // // vs
 
 // function anotherLogic (arr,target){
@@ -85,7 +84,7 @@
 // Return the pair.
 
 // 🔍 Example:
-// Input: arr = [1,3,4,7,10], target = 15  
+// Input: arr = [1,3,4,7,10], target = 15
 // Output: [4,10]   // sum = 14 (closest to 15)
 
 // function closestPair(arr, target) {
@@ -119,14 +118,13 @@
 // // Example
 // console.log(closestPair([1,3,4,7,10], 15));
 
-
 // 🧠 Two Pointer – Revision Question 2
 
 // Given a sorted array, remove all duplicates in-place and return the new length.
 
 // 🔍 Example:
-// Input: [1,1,2,2,3,4,4]  
-// Output: 4  
+// Input: [1,1,2,2,3,4,4]
+// Output: 4
 
 // Modified array: [1,2,3,4,...]
 
@@ -142,15 +140,14 @@
 // console.log(arr.slice(0,slow+1));
 // console.log(slow + 1);
 
-
 // 🧠 Two Pointer – Next Level (Still Interview Friendly)
 
 // Given a sorted array, remove duplicates such that each element can appear at most 2 times.
 // Return the new length.
 
 // 🔍 Example:
-// Input: [1,1,1,2,2,3]  
-// Output: 5  
+// Input: [1,1,1,2,2,3]
+// Output: 5
 
 // Modified array: [1,1,2,2,3,...]
 
@@ -172,14 +169,13 @@
 // }
 // console.log(removeDuplicates(arr));
 
-
 // 🧠 Two Pointer – Interview Level (Your Level)
 
 // Given a sorted array, check if there exists a pair such that the difference between them is equal to a target.
 // Return true or false.
 
 // 🔍 Example:
-// Input: arr = [1,3,5,8,12], target = 7  
+// Input: arr = [1,3,5,8,12], target = 7
 // Output: true   // (8 - 1 = 7)
 
 // function diffSumTarget(arr, target) {
@@ -205,14 +201,12 @@
 
 // console.log(diffSumTarget([1,3,5,8,12], 7));
 
-
-
 // 🧠 Two Pointer Question
 
 // Given a sorted array, count how many unique pairs have sum less than a target.
 
 // 🔍 Example:
-// Input: arr = [1,2,3,4,5], target = 7  
+// Input: arr = [1,2,3,4,5], target = 7
 // Output: 6
 
 // brute force...
@@ -252,8 +246,8 @@
 // Given a sorted array, remove all occurrences of a given target in-place and return the new length.
 
 // 🔍 Example:
-// Input: arr = [1,2,3,2,4,2,5], target = 2  
-// Output: 4  
+// Input: arr = [1,2,3,2,4,2,5], target = 2
+// Output: 4
 
 // Modified array: [1,3,4,5,...]
 
@@ -274,14 +268,13 @@
 
 // console.log(removeElement(arr,target))
 
-
 // 🧠 Two Pointer Question
 
 // Given a sorted array, find the pair whose sum is closest to a target.
 // Return that pair.
 
 // 🔍 Example:
-// Input: arr = [1,3,4,7,10], target = 15  
+// Input: arr = [1,3,4,7,10], target = 15
 // Output: [4,10]   // sum = 14 (closest)
 
 // let arr = [1,3,4,7,10], target = 15;
@@ -315,7 +308,7 @@
 // Return that pair.
 
 // 🔍 Example:
-// Input: arr = [1,3,4,7,10], target = 15  
+// Input: arr = [1,3,4,7,10], target = 15
 // Output: [4,10]   // sum = 14 (closest)
 
 // let arr = [1,3,4,7,10], target = 15;
@@ -353,3 +346,111 @@
 
 // findPair(arr,target);
 
+/////////////////////........................................................
+// 🧠 Two Pointer Question
+// Given a sorted array, move all duplicate elements to the end of the array while keeping the order of unique elements same.
+// Do it in-place.
+// 🔍 Example:
+// Input:  [1,1,2,2,3,4,4]
+// Output: [1,2,3,4,1,2,4]
+// 👉 First part → unique elements in order
+// 👉 Remaining part → duplicates (any order is fine)
+
+// let arr = [1,1,1,2,2,3];
+
+// function moveDuplicatesAtEnd (arr){
+//    if(!Array.isArray(arr)) return null;
+//    let slow = 0;
+//    let fast = 0;
+//    while (fast < arr.length){
+//     let temp = null;
+//     if(arr[fast] !== arr[slow]){
+//         slow++;
+//         temp = arr[slow];
+//         arr[slow] = arr[fast];
+//         arr[fast] = temp;
+//     }
+//     fast++;
+//    }
+//    return arr;
+// }
+
+// console.log(moveDuplicatesAtEnd(arr));
+
+// function moveDuplicatesAtEnd(arr) {
+//     if (!Array.isArray(arr)) return null;
+
+//     let n = arr.length;
+//     let slow = 0;
+
+//     // Step 1: place unique elements in front
+//     for (let fast = 1; fast < n; fast++) {
+//         if (arr[fast] !== arr[slow]) {
+//             slow++;
+//             arr[slow] = arr[fast];
+//         }
+//     }
+
+//     // Step 2: fill duplicates at the end
+//     let index = slow + 1;
+
+//     for (let i = 0; i <= slow; i++) {
+//         let count = 0;
+
+//         for (let j = 0; j < n; j++) {
+//             if (arr[j] === arr[i]) count++;
+//         }
+
+//         while (count > 1) {
+//             arr[index] = arr[i];
+//             index++;
+//             count--;
+//         }
+//     }
+
+//     return arr;
+// }
+
+// console.log(moveDuplicatesAtEnd([1,1,1,2,2,3]));
+
+// 🧠 Two Pointer Question
+
+// Given a sorted array, count the number of unique pairs whose sum equals a target.
+
+// 🔍 Example:
+// Input: arr = [1,1,2,2,3,4,4], target = 5
+// Output: 2
+
+// let arr = [1, 1, 2, 2, 3, 4, 4],
+//   target = 5;
+// let resultArray = [];
+// let count = 0;
+// let slow = 0;
+
+// for (let fast = 1; fast < arr.length; fast++) {
+//   if (arr[fast] !== arr[slow]) {
+//     slow++;
+//     arr[slow] = arr[fast];
+//   }
+// }
+
+// let i = 0;
+// let j = slow;
+// while (i < j) {
+//   if (arr[i] + arr[j] === target) {
+//     resultArray.push([arr[i], arr[j]]);
+//     count++;
+//     i++;
+//     j--;
+//   } else if (arr[i] + arr[j] > target) {
+//     j--;
+//   } else {
+//     i++;
+//   }
+// }
+
+// console.log("Count is :", count);
+// console.log("Result array is :",resultArray);
+
+// // console.log("Slow index :",slow);
+// // console.log("Updated array :",arr)
