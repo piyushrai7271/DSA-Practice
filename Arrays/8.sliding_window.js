@@ -458,9 +458,3 @@
 // Output: 2
 
 
-function smallestSubArray (arr, target) {
-   if(!Array.isArray(arr)) return 0
-}
-
-let arr = [2,1,5,2,3,2], target = 7;
-console.log(smallestSubArray(arr,target));

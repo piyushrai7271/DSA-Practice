@@ -1452,3 +1452,73 @@
 // }
 // console.log(arr);
 
+
+// 🧠 Basic DSA Question
+
+// Given an array of integers, find the largest element in the array.
+
+// 🔍 Example
+// Input: [4,2,9,1,7]
+// Output: 9
+
+// function find_Largest_Num (arr) {
+//     if(!Array.isArray(arr)) return null;
+    
+//     let largestNum = -Infinity;
+
+//     for(let i=0; i<arr.length; i++){
+//       if(arr[i] > largestNum){
+//         largestNum = arr[i];
+//       }
+//     }
+//     return largestNum ;
+// }
+
+// console.log(find_Largest_Num([4,2,9,1,7]))
+
+
+// 🧠 Junior-Level Linear Search Question
+
+// Given an array, find the element that appears maximum number of times.
+// Return that element.
+
+// If multiple elements have same highest frequency:
+// 👉 return the one that appears first.
+
+// 🔍 Example
+// Input: [1,2,2,3,1,2]
+// Output: 2
+
+// function max_Apperance (arr) {
+//     if(!Array.isArray(arr)) return null;
+
+//     let maxElement = null;
+//     let previousOccurance = 0;
+
+//     for(let i = 0; i<arr.length; i++){
+        
+//         let currentOccurance = 0;
+//         for(let j=0; j<arr.length ; j++){
+//           if(arr[i] === arr[j]){
+//             currentOccurance++
+//           }
+//         }
+//         if(currentOccurance > previousOccurance){
+//             previousOccurance = currentOccurance;
+//             maxElement = arr[i];
+//         }
+//     }
+//     return maxElement;
+// }
+
+// console.log(max_Apperance([1,2,2,3,1,2]))
+
+
+// 🧠 Same Level — Two Pointer Question
+
+// Given a sorted array, remove duplicates in-place and return the count of unique elements.
+
+// 🔍 Example
+// Input: [1,1,2,2,3,4,4]
+// Output: 4
+

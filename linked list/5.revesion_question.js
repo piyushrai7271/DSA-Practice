@@ -14,19 +14,20 @@
 // 10- update tail node
 
 // test start...........................................................
-// create node
+
+// create Node
 function Node(value,next=null){
-   this.value = value;
-   this.next = next;
+    this.value = value;
+    this.next = next;
 }
 
-// create linkedList
-function linkedList(){
-    this.head=null;
+// create linked list
+function linkedList (){
+    this.head = null;
     this.length = 0;
 }
 
-// adding new item on linked list on last node
+// add new Item 
 linkedList.prototype.addItem = function (value){
     let newNode = new Node(value);
 
@@ -34,33 +35,42 @@ linkedList.prototype.addItem = function (value){
     if(this.head === null){
         this.head = newNode;
         this.length++;
-        return
+        return ;
     }
 
-    let currentNode = this.head ;
+    let currentNode = this.head;
     while(currentNode.next !== null){
-       currentNode = currentNode.next;
+        currentNode = currentNode.next;
     }
     currentNode.next = newNode;
     this.length++;
     return;
 }
-//addItem on head node
+
+// add item at head
 linkedList.prototype.addItemAtHead = function (value){
     let newNode = new Node(value);
 
-    let currentNode = this.head;
+    let headNode = this.head;
     this.head = newNode;
-    newNode.next = currentNode;
+    newNode.next = headNode;
     this.length++;
-    return;
+    return ;
 }
-// addItem at given index
-linkedList.prototype.addAtIndex = function (value,index){
+
+// add item at given Index
+linkedList.prototype.addItemAtIndex = function (index,value){
     if(index < 0 || index > this.length) return null;
 
-    let newNode = new Node(value);
+    let newNode = 
 }
+
+// delete at head item
+linkedList.prototype.deleteHeadItem = function (){}
+
+// delete at tail item
+linkedList.prototype.deleteTailItem = function (){}
+
 // travers the linked list
 linkedList.prototype.travers = function (){
     if(this.head === null) return null;
@@ -73,11 +83,13 @@ linkedList.prototype.travers = function (){
 }
 
 
-let list = new linkedList()
+let list = new linkedList();
 list.addItem(10);
 list.addItem(20);
 list.addItem(30);
 list.addItem(40);
 list.addItemAtHead(0);
-list.addAtIndex(50,5);
-list.travers()
+list.addItemAtIndex(index , value);
+list.deleteHeadItem();
+list.deleteTailItem();
+list.travers();

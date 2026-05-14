@@ -454,3 +454,94 @@
 
 // // console.log("Slow index :",slow);
 // // console.log("Updated array :",arr)
+
+// function remove_duplicate (arr){
+//     if(!Array.isArray(arr)) return null;
+
+//     let slow = 0;
+//     for(let fast = 0; fast<arr.length; fast++){
+//         if(arr[fast] !== arr[slow]){
+//             slow++;
+//             arr[slow] = arr[fast]
+//         }
+//     }
+//     return slow + 1 ;
+// }
+
+// console.log(remove_duplicate([1,1,2,2,3,4,4]));
+
+
+// 🧠 Next Two Pointer Question (same level)
+
+// Given a sorted array and a target,
+// count how many pairs have sum less than target.
+
+// 🔍 Example
+// Input: arr = [1,2,3,4,5], target = 7
+// Output: 6
+
+// function find_pair_sum (arr,target){
+//    if(!Array.isArray(arr) || !target) return null;
+
+//    let pairCount = 0
+
+//    for(let i=0; i<arr.length; i++){
+     
+//       for (let j= i+1; j<arr.length; j++){
+//          if(arr[i] + arr[j] < target){
+//             pairCount++;
+//          }
+//       }
+//    }
+//    return pairCount;
+// }
+
+// console.log(find_pair_sum([1,2,3,4,5],7));
+
+// function find_Pair_count (arr,target){
+//     if(!Array.isArray(arr) || !target) return null;
+
+//     let totalPairCount = 0;
+//     let i = 0;
+//     let j= arr.length-1;
+//     while(i<j){
+//         if(arr[i] + arr[j] < target){
+//             totalPairCount += (j-i);
+//             i++;
+//             j--;
+//         } else if(arr[i] + arr[j] > target){
+//             j--;
+//         }
+//     }
+//     return totalPairCount;
+// }
+
+// console.log(find_Pair_count([1,2,3,4,5],7));  // this is wrong sloution for this question
+
+// correct solution is .....
+// function find_Pair_count(arr, target) {
+//     if (!Array.isArray(arr)) return null;
+
+//     let totalPairCount = 0;
+
+//     let i = 0;
+//     let j = arr.length - 1;
+
+//     while (i < j) {
+
+//         if (arr[i] + arr[j] < target) {
+
+//             totalPairCount += (j - i);
+
+//             i++;
+
+//         } else {
+
+//             j--;
+//         }
+//     }
+
+//     return totalPairCount;
+// }
+
+// console.log(find_Pair_count([1,2,3,4,5], 7));

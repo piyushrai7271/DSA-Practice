@@ -506,31 +506,31 @@
 
 // NEW DAY REVESION LINKED LIST.........
 
-// create node
-function Node(value,next=null){
-    this.value = value;
-    this.next = next;
-}
+// // create node
+// function Node(value,next=null){
+//     this.value = value;
+//     this.next = next;
+// }
 
-// create linked list
-function linkedList(){
-    this.head = null;
-    this.length = 0;
-}
+// // create linked list
+// function linkedList(){
+//     this.head = null;
+//     this.length = 0;
+// }
 
-//add item......
-//insert at head......
-// insert at tail......
-//
-
-
+// //add item......
+// //insert at head......
+// // insert at tail......
+// //
 
 
 
-let list = new linkedList()
-list.addItem(10);
-list.addItem(20);
-list.addItem(30);
-list.addItem(40);
-list.addItem(50);
+
+
+// let list = new linkedList()
+// list.addItem(10);
+// list.addItem(20);
+// list.addItem(30);
+// list.addItem(40);
+// list.addItem(50);
 
