@@ -453,3 +453,58 @@
 // }
 
 // console.log(findEquilibriumIndex(arr));
+
+// 🧠 Linear Search Question (Junior Interview Level)
+
+// Given an array, find the first element whose frequency is exactly 1.
+
+// 🔍 Example
+// Input: [4,5,1,2,0,4,5,2]
+// Output: 1
+// Input: [1,1,2,2]
+// Output: -1
+
+// // time complexity order of (n*n)
+// function find_first_element (arr){
+//    if(!Array.isArray(arr)) return null;
+   
+//    let first_Unique_fre = -1;
+//    for(let i=0; i<arr.length; i++){
+//       let currentCount = 0;
+//       for(let j=0; j<arr.length; j++){
+//          if(arr[j] === arr[i]){
+//            currentCount++;
+//          }
+//       }
+//       if(currentCount === 1){
+//          first_Unique_fre = arr[i];
+//          break;
+//       }
+//    }
+//    return first_Unique_fre;
+// }
+
+// console.log(find_first_element([4,5,1,2,0,4,5,2]))
+
+// let first_unique_freq = -1;
+// let myObject = {};
+// let arr = [4,5,1,2,0,4,5,2];
+
+// for(let i=0; i<arr.length; i++){
+
+//     let value = arr[i];
+//     if(myObject[value]){
+//         myObject[value] ++;
+//     } else {
+//         myObject[value] = 1;
+//     }
+// }
+
+// for(let key in myObject){
+//     if(myObject[key] === 1){
+//        first_unique_freq = Number(key);
+//        break;
+//     }
+// }
+
+// console.log(first_unique_freq);

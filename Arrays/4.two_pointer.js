@@ -545,3 +545,32 @@
 // }
 
 // console.log(find_Pair_count([1,2,3,4,5], 7));
+
+// 🧠 Two Pointer Question
+
+// Given a sorted array, find if there exists a pair whose difference equals target.
+
+// 🔍 Example
+// Input: arr = [1,3,5,8,12], target = 7
+// Output: true
+
+// function find_target (arr,target){
+//     if(!Array.isArray(arr) || !target) return false;
+
+//     let i=0;
+//     let j= arr.length-1;
+//     let isEqual = false;
+//     while(i<j){
+//         if(arr[j] - arr[i] > target){
+//            j--;
+//         } else if(arr[j] - arr[i] === target){
+//             isEqual = true;
+//             break;
+//         }else {
+//             i++;
+//         }
+//     }
+//     return  isEqual;
+// }
+
+// console.log(find_target([1,3,5,8,12],7))
