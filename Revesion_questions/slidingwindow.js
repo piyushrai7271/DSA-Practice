@@ -23,7 +23,7 @@
 //     for(let i=0; i<arr.length; i++){
 //         let currentSum = 0
 //         for(let j=i; j<i+k; j++){
-//             currentSum += arr[j]; 
+//             currentSum += arr[j];
 //         }
 //         if(currentSum < minimumSum){
 //             minimumSum = currentSum;
@@ -105,7 +105,6 @@
 // }
 
 // console.log(maximumOnes([1,0,1,1,0,1,0,1],3))
-
 
 // 🧠 Next Question (very important)
 // Given an array and number k,
@@ -227,7 +226,6 @@
 
 // console.log(minOddNumber([1,2,3,4,5,6],3))
 
-
 // 🧠 Slightly Different Fixed-Size Question
 
 // Given an array and a number k,
@@ -298,7 +296,6 @@
 
 // console.log(sum_of_sunArray([1,2,3,4,5],3));
 
-
 // 🧠 Next Fixed-Size Sliding Window Question
 
 // Given an array and number k,
@@ -337,3 +334,115 @@
 
 // console.log(countEven([1,2,4,3,6],3))
 
+// new day ...................
+
+// 🧠 Next Question
+// Given an array and number k,  // return the first negative number // in every subarray of size k.
+// If a window has no negative number:
+// 👉 return 0.
+// 🔍 Example
+// Input:
+// arr = [2,-1,3,-4,5,-2]
+// k = 3
+// Output:
+// [-1,-1,-4,-4]
+
+// function findFirstNegative(arr, k) {
+//   if (!Array.isArray(arr) || typeof k !== "number") return 0;
+
+//   let negativeArray = [];
+//   let firstNegative = 0;
+//   for (let i = 0; i < k; i++) {
+//     if (arr[i] < 0) {
+//       firstNegative = arr[i];
+//       break;
+//     }
+//   }
+
+//   negativeArray.push(firstNegative);
+//   let i = k;
+//   while (i < arr.length) {
+//     if (arr[i - k + 1] < 0) {
+//       firstNegative = arr[i - k + 1];
+//       negativeArray.push(firstNegative);
+//       i++;
+//     } else if (arr[i - k + 2] < 0) {
+//       firstNegative = arr[i - k + 2];
+//       negativeArray.push(firstNegative);
+//       i++;
+//     } else if (arr[i] < 0){
+//       firstNegative = arr[i];
+//       negativeArray.push(firstNegative);
+//       i++;
+//     } else {
+//         firstNegative = 0;
+//         negativeArray.push(firstNegative);
+//         i++;
+//     }
+//   }
+
+//   return negativeArray;
+// }
+
+// console.log(findFirstNegative([-1, 2, 3, 4, -5], 3)); // not currect solution
+
+// using brute force
+// function findFirstNegative(arr, k) {
+//     if (!Array.isArray(arr) || typeof k !== "number") {
+//         return null;
+//     }
+
+//     let result = [];
+
+//     // traverse every window
+//     for (let i = 0; i <= arr.length - k; i++) {
+
+//         let firstNegative = 0;
+
+//         // search inside current window
+//         for (let j = i; j < i + k; j++) {
+
+//             if (arr[j] < 0) {
+//                 firstNegative = arr[j];
+//                 break;
+//             }
+//         }
+
+//         result.push(firstNegative);
+//     }
+
+//     return result;
+// }
+
+// console.log(findFirstNegative([2, -1, 3, -4, 5, -2], 3)); // we will optimize this problem solution later 
+
+
+// 🧠 Next Question
+// Given an array and number k,
+// find the maximum element in every subarray of size k.
+// 🔍 Example
+// Input:
+// arr = [1,3,-1,-3,5,3,6,7]
+// k = 3
+// Output:
+// [3,3,5,5,6,7]
+
+// function findMaxElement (arr,k){
+//     if(!Array.isArray(arr) || typeof k !== "number") return null;
+   
+//     let maxWindowElement = [];
+//     for(let i=0 ; i<= arr.length-k; i++){
+
+//         let maxInwindow = -Infinity;
+
+//         for(let j=i; j < i+k; j++){
+//             if(arr[j] > maxInwindow){
+//                 maxInwindow = arr[j];
+//             }
+//         }
+//         maxWindowElement.push(maxInwindow);
+//     }
+//     return maxWindowElement;
+// }
+
+// console.log(findMaxElement([1,3,-1,-3,5,3,6,7],3))
