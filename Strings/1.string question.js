@@ -127,7 +127,6 @@
 
 // console.log(compressString("aaabbccccd"));
 
-
 // 🧠 Next String Manipulation Question
 // Remove consecutive duplicate characters from a string.
 // 🔍 Example
@@ -188,39 +187,69 @@
 // Output:
 // true
 
-function isAnagram(str1, str2) {
+// function isAnagram(str1, str2) {
 
-    if (str1.length !== str2.length) {
-        return false;
-    }
+//     if (str1.length !== str2.length) {
+//         return false;
+//     }
 
-    let myObject = {};
+//     let myObject = {};
 
-    // store frequency of str1
-    for (let i = 0; i < str1.length; i++) {
+//     // store frequency of str1
+//     for (let i = 0; i < str1.length; i++) {
 
-        let char = str1[i];
+//         let char = str1[i];
 
-        if (myObject[char]) {
-            myObject[char]++;
-        } else {
-            myObject[char] = 1;
-        }
-    }
+//         if (myObject[char]) {
+//             myObject[char]++;
+//         } else {
+//             myObject[char] = 1;
+//         }
+//     }
 
-    // reduce frequency using str2
-    for (let i = 0; i < str2.length; i++) {
+//     // reduce frequency using str2
+//     for (let i = 0; i < str2.length; i++) {
 
-        let char = str2[i];
+//         let char = str2[i];
 
-        if (!myObject[char]) {
-            return false;
-        }
+//         if (!myObject[char]) {
+//             return false;
+//         }
 
-        myObject[char]--;
-    }
+//         myObject[char]--;
+//     }
 
-    return true;
-}
+//     return true;
+// }
 
-console.log(isAnagram("listen", "silent"));
+// console.log(isAnagram("listen", "silent"));
+
+// 🧠 String Question 1 — Longest Word in Sentence
+// Given a sentence,
+// return the longest word.
+// 🔍 Example
+// Input:
+// "i love javascript very much"
+
+// Output:
+// "javascript"
+// ⚠️ Rules
+// words are separated by spaces
+// if multiple longest words exist, return first one
+// don’t use built-in sort
+
+// function findLongestWord(sentence) {
+//   const words = sentence.split(" ");
+//   let longestWord = "";
+
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length > longestWord.length) {
+//       longestWord = words[i];
+//     }
+//   }
+
+//   return longestWord;
+// }
+
+// // Example usage:
+// console.log(findLongestWord("i love javascript very much"));
