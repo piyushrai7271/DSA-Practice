@@ -253,3 +253,234 @@
 
 // // Example usage:
 // console.log(findLongestWord("i love javascript very much"));
+
+// Anargram
+// palindrome
+// reverse string
+// string compression
+// remove duplicates
+// anagram
+// frequency counting
+// longest word
+// substring problems
+// basic sliding window on strings
+
+// STRING REVISION.........................
+// Anagram
+
+// function isAnagram(str1, str2) {
+//   if (str1.length !== str2.length) {
+//     return false;
+//   }
+
+//   let myObject = {};
+//   for (let i = 0; i < str1.length; i++) {
+//     let value = str1[i];
+//     if (myObject[value]) {
+//       myObject[value]++;
+//     } else {
+//       myObject[value] = 1;
+//     }
+//   }
+
+//   for (let j = 0; j < str2.length; j++) {
+//     let value = str2[j];
+
+//     if (!myObject[value]) {
+//       return false;
+//     } else {
+//       myObject[value]--;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isAnagram("listen", "silent"));
+
+// palindrom question
+
+// function isPalindrom (str) {
+//     if(str.length === 0) return false;
+
+//     str = str.toLowerCase();
+//     let isPalinTrue = true;
+//     for(let i=0,j=str.length-1; i<j; i++,j--){
+//        if(str[i] !== str[j]){
+//         isPalinTrue= false;
+//         break;
+//        }
+//     }
+//     return isPalinTrue;
+// }
+// console.log(isPalindrom("Kayak"))
+
+// reverse string
+// 🧠 Next Question
+// Reverse every word in a sentence
+// but keep word order same.
+// 🔍 Example
+// Input:
+// "i love javascript"
+
+// Output:
+// "i evol tpircsavaj"
+
+// function reverseWords(sentence) {
+
+//     if(sentence.length === 0) return null;
+
+//     let words = sentence.split(" ");
+//     let result = [];
+
+//     for (let i = 0; i < words.length; i++) {
+
+//         let reversed = "";
+
+//         for (let j = words[i].length - 1; j >= 0; j--) {
+//             reversed += words[i][j];
+//         }
+
+//         result.push(reversed);
+//     }
+
+//     return result.join(" ");
+// }
+
+// console.log(reverseWords("hello world"));
+
+// NEW DAY..................................................
+// Reverse the string and return reversed string
+
+// function reverse(str) {
+//   if (str.length === 0) return 0;
+
+//   let reversed = "";
+//   for (let i = 0; i < str.length; i++) {
+//     reversed = str[i] + reversed;
+//   }
+//   return reversed;
+// }
+
+// console.log(reverse("piyush"));
+
+// second method of reverse.............
+// function reverse (str) {
+//     if(str.length === 0) return null;
+
+//     let reversed = "";
+//     for(let i = str.length-1; i>=0 ; i--){
+//        reversed = reversed + str[i];
+//     }
+//     return reversed;
+// }
+
+// console.log(reverse("Piyush"));
+
+// NEW DAY........................................................
+// reverse string
+// 🧠 Next Question
+// Reverse every word in a sentence
+// but keep word order same.
+// 🔍 Example
+// Input:
+// "i love javascript"
+
+// Output:
+// "i evol tpircsavaj"
+
+// function reverseWords(sentence) {
+
+//     let reversedSentence = "";
+//     let word = "";
+
+//     for (let i = 0; i <= sentence.length; i++) {
+
+//         if (sentence[i] !== " " && i !== sentence.length) {
+
+//             word = sentence[i] + word;
+
+//         } else {
+
+//             reversedSentence += word;
+
+//             if (i !== sentence.length) {
+//                 reversedSentence += " ";
+//             }
+
+//             word = "";
+//         }
+//     }
+
+//     return reversedSentence;
+// }
+
+// console.log(reverseWords("i love javascript"));
+
+
+// NEW DAY .................................................
+
+// Reverse the order of words in a sentence.
+// 🔍 Example
+// Input:
+// "i love javascript"
+// Output:
+// "javascript love i"
+// ⚠️ Important
+
+// function reverseWord (sentance) {
+//    if(sentance.length === 0) return null;
+
+//    let reversedSentance = "";
+//    let word = sentance.split("");
+//    for(let i=0 ; i<word.length; i++){
+//     reversedSentance = reversedSentance + word[i];
+//    }
+
+//    return reversedSentance;
+// }
+
+// console.log(reverseWord("i love javascript"));
+
+
+// Find the first non-repeating character in a string.
+// 🔍 Example 1
+// Input:
+// "aabbcdeff"
+// Output:
+// "c"
+
+// function nonRepeating (str) {
+//     if(str.length === 0) return null;
+
+//     let myObject = {}
+//     for(let i=0; i<str.length; i++){
+//         let char =  str[i];
+//         if(myObject[char]){
+//             myObject[char]++;
+//         } else {
+//             myObject[char] = 1;
+//         }
+//     }
+//     let firstUnique = null;
+//     for(let i=0; i< str.length; i++){
+//         let value = str[i];
+//         if(myObject[value] === 1){
+//            firstUnique = value;
+//            break;
+//         }
+//     }
+//     return firstUnique;
+// }
+
+// console.log(nonRepeating("aabbcdeff"))
+
+
+// Find the longest word in a sentence.
+// 🔍 Example
+// Input:
+// "i love javascript very much"
+
+// Output:
+// "javascript"
+
+
