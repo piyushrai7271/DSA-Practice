@@ -783,17 +783,3 @@
 // }
 
 // console.log(isPalindrom(arr));
-
-
-
-
-
-
-
-
-
-
-
-
-
-

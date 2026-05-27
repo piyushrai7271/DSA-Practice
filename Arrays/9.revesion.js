@@ -92,3 +92,34 @@
 // console.log(findMaxSum([2,1,5,1,3,2],3))
 
 
+// NEW DAY.........................
+
+// Move all zeros to the end of array
+// while keeping non-zero elements order same.
+// 🔍 Example
+// Input:
+// [0,1,0,3,12]
+// Output:
+// [1,3,12,0,0]
+// ⚠️ Rules
+// use two pointers
+// do in-place if possible
+// maintain order of non-zero elements
+
+// function moveZeroAtEnd (arr) {
+//     if(!Array.isArray(arr) || arr.length === 0) return null;
+
+//     let nonZeroIndex = 0;
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i] !== 0){
+//             let temp = arr[nonZeroIndex];
+//             arr[nonZeroIndex] = arr[i];
+//             arr[i] = temp;
+
+//             nonZeroIndex++;
+//         }
+//     }
+//     return arr;
+// }
+
+// console.log(moveZeroAtEnd([0,1,0,3,12]))
