@@ -508,3 +508,41 @@
 // }
 
 // console.log(first_unique_freq);
+
+// New Day...............
+// Find the equilibrium index in an array.
+// An index is called equilibrium index if:
+// sum of elements on left
+// =
+// sum of elements on right
+// 🔍 Example
+// Input:
+// [1,3,5,2,2]
+// Output:
+// 2
+
+function findEquilibriumIndex (arr) {
+    if(!Array.isArray(arr) || arr.length === 0) return null;
+
+    let equilibrimIndex = -1;
+    let totalSum = 0;
+    let leftSum = 0;
+
+    for(let i=0; i<arr.length; i++){
+        totalSum += arr[i];
+    }
+
+    for(let i=0; i<arr.length; i++){
+        
+        if(totalSum - (leftSum + arr[i]) === leftSum){
+            equilibrimIndex = i;
+            break;
+        }
+        leftSum += arr[i];
+    }
+
+    return equilibrimIndex;
+}
+
+console.log("Equilibrium index is :",findEquilibriumIndex([1,3,5,2,2]))
+

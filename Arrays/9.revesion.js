@@ -123,3 +123,102 @@
 // }
 
 // console.log(moveZeroAtEnd([0,1,0,3,12]))
+
+// Remove duplicates from a sorted array.
+// 🔍 Example
+// Input:
+// [1,1,2,2,3,4,4]
+
+// Output:
+// [1,2,3,4]
+// ⚠️ Rules
+// array is sorted
+// use two pointers
+// modify same array if possible
+// maintain sorted order
+
+// function removeDuplicates (arr) {
+//     if(!Array.isArray(arr) || arr.length === 0) return null;
+
+//     let slow = 0;
+//     for(let fast=0; fast<arr.length; fast++){
+//        if(arr[slow] !== arr[fast]){
+//         slow++;
+//         arr[slow] = arr[fast];
+//        }
+//     }
+//     return arr.slice(0,slow+1);
+// }
+
+// console.log(removeDuplicates([1,1,2,2,3,4,4]));
+
+
+// 🧠 Fixed Sliding Window Question
+
+// Find the maximum number of even numbers
+// in any subarray of size k.
+
+// 🔍 Example
+// Input:
+// arr = [2,1,4,6,3,8,1]
+// k = 3
+
+// Output:
+// 2
+
+// function findMaxEven(arr,k){
+//     if(!Array.isArray(arr) || arr.length === 0 || k < 1) return null;
+
+//     let maxWindowEven = 0;
+//     for(let i=0; i<k; i++){
+//         if(arr[i] % 2 === 0){
+//             maxWindowEven++
+//         }
+//     }
+
+//     let currentMaxEven = maxWindowEven;
+//     for(let i=k; i<arr.length; i++){
+//         if(arr[i-k] % 2 === 0){
+//             maxWindowEven--;
+//         } 
+//         if(arr[i] % 2 === 0){
+//             maxWindowEven++;
+//         }
+
+//         if(maxWindowEven > currentMaxEven){
+//             currentMaxEven = maxWindowEven;
+//         }
+//     }
+//     return currentMaxEven;
+// }
+
+// console.log(findMaxEven([2,1,4,6,3,8,1],3))
+
+
+// Find all subarray sums of size k.
+// 🔍 Example
+// Input:
+// arr = [1,2,3,4,5]
+// k = 3
+// Output:
+// [6,9,12]
+
+// function findSubarraySum (arr,k) {
+//     if(!Array.isArray(arr) || arr.length === 0 || k < 1) return null;
+
+//     let sumWindow = [];
+//     let windowSum = 0;
+//     for(let i=0; i<k; i++){
+//         windowSum += arr[i]
+//     }
+//     sumWindow.push(windowSum);
+
+//     for(let j=k; j<arr.length; j++){
+//         windowSum = windowSum - arr[j-k] + arr[j];
+//         sumWindow.push(windowSum);
+//     }
+//     return sumWindow;
+// }
+
+
+// console.log(findSubarraySum([1,2,3,4,5],3));

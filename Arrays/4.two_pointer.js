@@ -576,4 +576,55 @@
 // console.log(find_target([1,3,5,8,12],7))
 
 
+// Sort an array containing only 0, 1, and 2.
 
+// 🔍 Example
+// Input:
+// [2,0,2,1,1,0]
+
+// Output:
+// [0,0,1,1,2,2]
+
+// brute force way.....
+// function sortArray (arr){
+//     if(!Array.isArray(arr) || arr.length === 0) return null;
+
+    
+//     for(let i=0; i<arr.length; i++){
+//         for(let j= i+1; j<arr.length; j++){
+//             if(arr[j] < arr[i]){
+//                 let temp = arr[j];
+//                 arr[j] = arr[i];
+//                 arr[i] = temp;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+
+// console.log(sortArray([2,0,2,1,1,0]));
+
+// function sortArray (arr) {
+//     if(!Array.isArray(arr) || arr.length === 0) return null;
+
+//     let low = 0;
+//     let mid = 0;
+//     let high = arr.length-1;
+//     while(mid <= high){
+//         if(arr[mid] === 0){
+//             let temp = arr[mid];
+//             arr[mid] = arr[low];
+//             arr[low] = temp; low++; mid++;
+//         } else if(arr[mid] === 1){
+//             mid++;
+//         }else {
+//             let temp = arr[mid];
+//             arr[mid] = arr[high];
+//             arr[high] = temp;
+//             high--;
+//         }
+//     }
+//     return arr;
+// }
+
+// console.log(sortArray([2,0,2,1,1,0]))
