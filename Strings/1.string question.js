@@ -498,3 +498,96 @@
 
 // console.log(findLongestWord("i love javascript very much"));
 
+
+// 🧠 Question 1
+
+// Toggle the case of every character.
+
+// Example
+// Input:
+// "HeLLo"
+
+// Output:
+// "hEllO"
+// Example
+// Input:
+// "JavaScript"
+
+// Output:
+// "jAVAsCRIPT"
+
+// function changeCase (str) {
+//     if(str.length === 0) return null;
+
+//     let resultStr = "";
+//     for(let i=0; i<str.length; i++){
+//         let code = str.charCodeAt(i);
+//         if(code >=97 && code <= 122){
+//             code = code - 32;
+//             let char = String.fromCharCode(code);
+//             resultStr += char
+//         } else if( code >= 65 && code <= 90){
+//              code = code + 32;
+//              let char = String.fromCharCode(code);
+//              resultStr += char;
+//         }
+//     }
+//     return resultStr;
+// }
+
+// console.log(changeCase("HeLLo"))
+
+// 🧠 Next Question
+// Remove all digits from a string.
+
+// Example
+// Input:
+// "abc123de45"
+
+// Output:
+// "abcde"
+
+// function removeDigit (str) {
+//     if(str.length === 0) return null;
+
+//     let resultStr = "";
+//     for(let i=0; i<str.length; i++){
+//         let code = str.charCodeAt(i);
+//         if(!(code >= 48 && code <= 57)){
+//             resultStr += str[i];
+//         }
+//     }
+//     return resultStr;
+// }
+
+// console.log(removeDigit("abc123de45"))
+
+
+// 🧠 Next Question
+// Compress consecutive spaces into a single space.
+// Example
+// Input:
+// "i   love     javascript"
+
+// Output:
+// "i love javascript"
+
+// function removeExtraSpace (sentance) {
+//    if(sentance.length === 0) return null;
+
+//    let resultStr = "";
+//    for(let i=0; i<sentance.length; i++){
+
+//     // Skip space if previous character is also a space
+//         if (sentance[i] === " " && sentance[i - 1] === " ") {
+//             continue;
+//         }
+
+//         resultStr += sentance[i];
+//    }
+
+//    return resultStr;
+// }
+
+// console.log(removeExtraSpace("i   love     javascript"))
+

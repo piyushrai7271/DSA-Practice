@@ -71,3 +71,43 @@
 // console.log(reverseVowels("javascript")); // Output: "jivascrapt"
 
 
+// 🧠 String Reverse Question
+// Reverse only the words
+// whose length is greater than 4.
+
+// 🔍 Example
+// Input:
+// "i love javascript coding"
+
+// Output:
+// "i evol tpircsavaj gnidoc"
+// 🔍 Explanation
+// "love"       → unchanged (length 4)
+// "javascript" → reversed
+// "coding"     → reversed
+
+
+// 🧠 Next Question
+// Remove the character that appears immediately after #.
+// Example 1
+// Input:
+// "ab#cd"
+
+// Output:
+// "abcd"
+
+function removeElement (str) {
+    if(str.length === 0) return null;
+
+    let uniqueStr = "";
+    for(let i=0; i<str.length; i++){
+        if(str[i-1] !== "#"){
+            uniqueStr += str[i];
+        }
+    }
+
+    return uniqueStr;
+}
+
+
+console.log(removeElement("ab#cd"))
