@@ -275,3 +275,74 @@
 // console.log(reverseSentance("my name is piyush")); 
 
 
+// Revision Question 1 — Reverse String
+// Given a string, return the reversed string.
+
+// Example
+// Input:
+// "backend"
+// Output:
+// "dnekcab"
+
+// function reverse (str){
+//     if(typeof str !== "string" || str.length === 0) return null;
+
+//     let reverseStr = "";
+//     for(let i=str.length-1; i>=0;  i--){
+//        reverseStr += str[i];
+//     }
+//     return reverseStr;
+// }
+
+// console.log(reverse("dnekcab"))
+
+// Revision Question 2 — Reverse Words
+// Reverse the order of words, but do not reverse the words themselves.
+
+// Example
+// Input:
+// "i love backend"
+// Output:
+// "backend love i"
+
+// function reverseSentance (str) {
+//     if(typeof str !== "string" || str.length === 0) return null;
+
+//     let arrSentance = str.split(" ");
+//     let reverseArray = [];
+//     for(let i=arrSentance.length-1; i>=0; i--){
+//         reverseArray.push(arrSentance[i]);
+//     }
+
+//     return reverseArray.join(" ");
+// }
+
+// console.log(reverseSentance("i love backend"))
+
+// Reverse every word, but keep the word order unchanged.
+
+// Example
+// Input:
+// "i love backend"
+// Output:
+// "i evol dnekcab"
+
+// function reverseWord (str) {
+//     if(typeof str !== "string" || str.length === 0) return null;
+
+//     let strArr = str.split(" ");
+//     let reverseSentance = [];
+//     for(let i=0; i<strArr.length; i++){
+
+//         let word = strArr[i];
+//         let wordStr = "";
+//         for(let j=word.length-1; j>=0; j--){
+//             wordStr += word[j];
+//         }
+//         reverseSentance.push(wordStr);
+//     }
+//     return reverseSentance.join(" ");
+// }
+
+
+// console.log(reverseWord("i love backend"))
