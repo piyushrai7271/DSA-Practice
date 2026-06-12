@@ -41,7 +41,6 @@
 // list.insertAtHead(20);
 // list.traverse(); // 20 10
 
-
 // create a node
 
 // class Node {
@@ -51,7 +50,7 @@
 //     }
 // }
 
-// creating linkedList 
+// creating linkedList
 
 // class linkedList {
 //     constructor(){
@@ -77,7 +76,7 @@
 // class Node {
 //     constructor(value){
 //         this.value = value;
-//         this.next = null; 
+//         this.next = null;
 //     }
 // }
 
@@ -130,5 +129,55 @@
 //     }
 // }
 
+// NEW DAY ........................................................
+// create new node
+function Node(value, next = null) {
+  this.value = value;
+  this.next = next;
+}
 
+// create linked list
+function LinkedList() {
+  ((this.head = null), (this.length = 0));
+}
 
+// create new node with data
+LinkedList.prototype.addNewNode = function (value) {
+  let newNode = new Node(value);
+
+  // check if head is empty
+  if (this.head === null) {
+    this.head = newNode;
+    this.length++;
+    return;
+  }
+
+  let currentNode = this.head;
+  while (currentNode.next !== null) {
+    currentNode = currentNode.next;
+  }
+  currentNode.next = newNode;
+  this.length++;
+  return;
+};
+
+// travers linked list
+LinkedList.prototype.travers = function () {
+  // check if head is null
+  if (this.head === null) {
+    return null;
+  }
+
+  let currentNode = this.head;
+  while (currentNode !== null) {
+    console.log(currentNode.value);
+    currentNode = currentNode.next;
+  }
+};
+
+let list = new LinkedList();
+list.addNewNode(10);
+list.addNewNode(20);
+list.addNewNode(30);
+list.addNewNode(40);
+list.travers();

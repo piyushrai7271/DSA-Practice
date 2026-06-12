@@ -21,5 +21,15 @@
 //     return uniqueStr;
 // }
 
-
 // console.log(removedDuplicate("aaabbccccd"));
+
+
+// Valid Palindrome II
+// Given a string, return true if it can become a palindrome after removing at most one character.
+// Example 1
+// Input:
+// "abca"
+
+// Output:
+// true
+

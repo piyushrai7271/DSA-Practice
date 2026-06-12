@@ -10,43 +10,54 @@
 // Output:
 // true
 
-// function isAnagram(str1, str2) {
-//   if (typeof str1 !== "string" || typeof str2 !== "string") {
-//     return false;
-//   }
 
-//   let str1S = str1.toLowerCase();
-//   let str2S = str2.toLowerCase();
-//   let myObject = {};
+function isAnagram (str1, str2) {
+    if(typeof str1 !== "string" || typeof str2 !== "string") return false;
 
-//   for (let i = 0; i < str1S.length; i++) {
-//     let value = str1S[i];
-//     if (value === " ") continue;
+    // converts both string to small case 
+    let str1S = str1.toLowerCase();
+    let str2S = str2.toLowerCase();
 
-//     if (myObject[value]) {
-//       myObject[value]++;
-//     } else {
-//       myObject[value] = 1;
-//     }
-//   }
+    let clean1 = "";
+    let clean2 = "";
+    // remove empty space from both string
+    for(let i=0; i<str1S.length; i++){
+        if(str1S[i] !== " "){
+            clean1 += str1S[i];
+        }
+    }
 
-//   for (let i = 0; i < str2S.length; i++) {
-//     let value = str2S[i];
-//     if (value === " ") continue;
+    for(let i=0; i<str2S.length; i++){
+        if(str2S[i] !== " "){
+            clean2 += str2S[i];
+        }
+    }
 
-//     if (myObject[value]) {
-//       myObject[value]--;
-//     } else {
-//       return false;
-//     }
-//   }
+    // check both string length if length not equal return false
+    if(clean1.length !== clean2.length) return false;
 
-//   for (const key in myObject) {
-//     if (myObject[key] !== 0) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
+    // store str1 value count in object 
+    let myObject = {} ;
 
-// console.log(isAnagram("Dormitory", "Dirty Room"));
+    for(let i=0; i<clean1.length; i++){
+        let value = clean1[i];
+        if(myObject[value]){
+            myObject[value]++;
+        }else {
+            myObject[value] = 1;
+        }
+    }
+    // reduce count of every value and if it is not there return false else reduce count --;
+    for(let i=0; i<clean2.length; i++){
+        let value = clean2[i];
+        if(!myObject[value]){
+            return false;
+        } else {
+            myObject[value]--;
+        }
+    }
+
+    return true;
+}
+
+console.log(isAnagram("Dormitory", "Dirty Room"));
